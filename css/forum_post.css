@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "../css/pallete.css";
+body{
+    background-color: var(--surface-color) ;
+    background: linear-gradient(to right,var(--secondary-color),var(--surface-color));
+    
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    */
+    
+}
+.post-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+.post-container{
+    background-color: var(--tertiary-color);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: 10px;
+    padding: 30px;
+}
+.post-user-name h2{
+    font-family: "Playwrite VN", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: var(--inverseprimary-color);
+}
+.post-info h3{
+    font-family: "Work Sans", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 10px;
+    color: var(--secondary-color);
+    padding-left: 13px;
+}
+.post-contain h4{
+    font-family: "Work Sans", system-ui;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+    color: var(--primary-color);
+    padding-left: 13px;
+}
+.post-contain p{
+    font-family: "Work Sans", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    padding-left: 13px;
+    padding-bottom: 20px;
+    color: var(--inverseprimary-color);
+}
+.post-like-cmt{
+    width: fit-content;
+    height: 100%;
+    padding-left: 13px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--inverseprimary-color);
+}
+
+.post-like:hover .far.fa-heart::before{
+    content: "\f004";
+    color:var(--inverseprimary-color);
+    font-weight: 900;
+}
+
+.post-cmt:hover .far.fa-comment::before{
+    content: "\f075";
+    color:var(--primary-color);
+    font-weight: 900;
+}

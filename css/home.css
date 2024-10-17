@@ -1,0 +1,172 @@
+@import "../css/pallete.css";
+@font-face {
+    font-family: Pacifico;
+    src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+.playwrite-vn-font {
+    font-family: "Playwrite VN", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    /*background-color: rgba(5, 25, 51);
+    background-image:url(../images/hero.jpg) ;
+    */
+    background-image:url(../images/hero.jpg) ;
+    
+}
+a{
+    cursor: pointer;
+}
+.header-main{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.header-main-logo{
+    width:  fit-content;
+    height: 100%;
+
+    display: flex;
+    padding-left: 60px;
+} 
+.header-main-logo img{
+    height: 60px;
+    align-self: center;
+}
+.header-main-nav{
+    height: 100%;
+
+}
+.header-main-nav ul{
+    list-style: none;
+    margin-left: 30px;
+}
+.header-main-nav ul li{
+    display: inline;
+    float: left;
+    
+}
+.header-main-nav ul li a{
+    padding: 0 10px 0 10px;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 60px;
+    color: black;
+    display: block;
+    height: 100%;
+}
+.header-main-nav ul li a:hover{
+    color: rgba(236, 166, 193);
+
+
+}
+.header-main-sm{
+    width: fit-content;
+    height: 100%;
+
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.header-main-sm-fb{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/facebook_black.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-fb:hover{
+    width: 20px;
+    height: 20px;
+    background-image:url(../images/facebook_color.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-in{
+    width: 40px;
+    height: 20px;
+    background-image:url(../images/xiaohongshu_trans.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-in:hover{
+    width: 40px;
+    height: 20px;
+    background-image:url(../images/xiaohongshu_red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero-header {
+    /* width: 100vw; */
+    height: 100vh;
+    box-shadow: 3px 3px 2px #bebebe;
+  
+    /* hero-header flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Texy style */
+    text-align: center;
+    color: #E8E5DA;
+  
+    /* Background image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(image-dichthuat/hero.jpg) ;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  #hero-title {
+    font-size: 3.5em;
+  }
+  
+  #hero-text {
+    font-size: 1.3em;
+    margin-top: 2%;
+  }
+  
+  #hero-button {
+    border: solid 2px #E8E5DA;
+    background-color: inherit;
+    color: #E8E5DA;
+    margin-top: 6%;
+    width: 25%;
+    height: 55px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+  
+  #hero-button:hover {
+    cursor: pointer;
+  }
+  
+  #hero-header-kid {
+    /* width: 100vw; */
+    height: 15vh;
+    box-shadow: 3px 3px 2px #bebebe;
+  
+    /* hero-header flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Texy style */
+    text-align: center;
+    color: #E8E5DA;
+  
+    /* Background image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(image-dichthuat/hero.jpg) ;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
