@@ -1,0 +1,10 @@
+@import "../css/pallete.css";
+@font-face {
+    font-family: Pacifico;
+    src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+
+.bg-dark text-white mt-5 p-4{
+    background-color: #4CAF50; /* Màu nền xanh lá */
+        color: white;
+}
