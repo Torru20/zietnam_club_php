@@ -1,0 +1,23 @@
+@import "../css/pallete.css";
+@font-face {
+    font-family: Pacifico;
+    src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+a{
+    cursor: pointer;
+}
+.settings_container{
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+.settings_images_id{
+    display: flex;
+    flex-direction: row;
+}
+
+

@@ -8,6 +8,7 @@
           <li><a href="#">ABOUT US</a></li>
           <li><a href="../pages/shop_page.php">BUY</a></li>
           <li><a href="../pages/forum_page.php">FORUM</a></li>
+          <li><a href="../pages/settings_page.php">SETTINGS</a></li>
         </ul>
       </nav>
     </div>
