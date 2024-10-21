@@ -2,7 +2,8 @@
     #popup {
         background-color: var(--tertiary-color);
         padding: 40px;
-        margin: 30px;
+        margin-top: 100px;
+
         border-radius: 30px;
         position: fixed;
         z-index: 999;
@@ -25,19 +26,12 @@
         color: var(--inverseprimary-color);
         padding: 10px;
     }
-    .post-input {
-        height: 200%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        column-gap: 10px;
+    div .form-floating {
         color: var(--inverseprimary-color);
-        width: 300px;
-        
+        margin: 10px;
     }
-    .post-input input{
+    .mb-3 input{
         background-color: var(--tertiary-color);
-        border: none;
         margin: 8px 0;
         padding: 10px 15px;
         font-size: 20px;
@@ -50,7 +44,7 @@
         font-style: bold;
         color:var(--secondary-color);
     }
-    .post-input input:focus{
+    .mb-3 input:focus{
         background-color: var(--tertiary-color);
         border: none;
         margin: 8px 0;
@@ -65,37 +59,10 @@
         font-style: normal;
         color:var(--primary-color);
     }
-    textarea {
-        width: 100%; /* Chiếm toàn bộ chiều rộng của phần tử cha */
-        height: 200px;
-        padding: 10px;
-        margin: 8px 0;
-        border: 1px solid var(--secondary-color);
-        border-radius: 8px;
-        resize: vertical; /* Cho phép người dùng thay đổi kích thước theo chiều dọc */
-        font-family: "Work Sans", sans-serif;
-        font-size: 17px;
-        font-optical-sizing: auto;
-        font-weight: 100;
-        font-style: normal;
-        color:var(--secondary-color);
-    }
-    textarea:focus{
-        width: 100%; /* Chiếm toàn bộ chiều rộng của phần tử cha */
-        height: 200px;
-        padding: 10px;
-        margin: 8px 0;
-        border: 1px solid var(--secondary-color);
-        border-radius: 8px;
-        resize: vertical; /* Cho phép người dùng thay đổi kích thước theo chiều dọc */
-        font-family: "Work Sans", sans-serif;
-        font-size: 17px;
-        font-optical-sizing: auto;
-        font-weight: 300;
-        font-style: normal;
+    textarea#floatingTextarea2 {
         color:var(--primary-color);
     }
-
+    
     .btn-post-form {
         display: flex; /* Sử dụng flexbox để sắp xếp các phần tử theo hàng */
         justify-content: space-between; /* Tạo khoảng cách đều giữa các phần tử */
@@ -127,9 +94,13 @@
 <div id="popup" style="display: none;">
     <h1>Say sth to everyone</h1>
     <form method="post">
-        <div class="post-input">
-            <input type="text" name = "post-title" placeholder="Topic">
-            <textarea id="message" name="message" rows="10" cols="50" placeholder="Write everything u want, bae..."></textarea>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="write here...">
+            <label for="floatingInput">Topic</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="sayyyy" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Write everything u want, bae...</label>
         </div>
         
         <div class="btn-post-form">
