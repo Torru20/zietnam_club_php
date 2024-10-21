@@ -1,0 +1,140 @@
+@import "../css/pallete.css";
+@font-face {
+    font-family: Pacifico;
+    src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+a{
+    cursor: pointer;
+    
+}
+.navbar-brand{
+    color: var(--inverseprimary-color);
+    font-family: "Playwrite VN", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+.nav-link{
+    color: var(--primary-color);
+    
+}
+.nav-link.active{
+    color: white;
+    background-color: black; 
+}
+.nav-link:hover{
+    color: var(--inverseprimary-color);
+}
+.nav-link.dropdown-toggle {
+    color: var(--primary-color); 
+    background-color: var(--surface-color); /* Màu xanh dương */
+}
+a.nav-link.dropdown-toggle.show{
+    color: var(--inverseprimary-color); 
+}
+/* Thay đổi màu chữ và nền cho dropdown-menu */
+.dropdown-menu {
+    background-color: var(--tertiary-color); /* Màu xám nhạt */
+}
+
+.dropdown-menu .dropdown-item {
+    color: var(--primary-color); /* Màu xám đậm */
+}
+
+/* Thay đổi màu chữ và nền cho dropdown-item khi hover */
+.dropdown-menu .dropdown-item:hover {
+    background-color: var(--surface-color);
+    color: var(--inverseprimary-color);
+}
+.navbar-expand-lg{
+
+    background-color: var(--surface-color);
+    display: flex;
+    position: relative;
+    
+}
+.navbar-expand-lg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900; /* Đảm bảo header ở trên các phần tử khác */
+}
+.header-main-sm{
+    width: fit-content;
+    height: 100%;
+
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.navbar-collapse{
+    margin: 10px;
+
+}
+
+.header-main-sm .fa-brands.fa-facebook{
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+    
+}
+.header-main-sm .fa-brands.fa-facebook:hover{
+    width: 20px;
+    height: 20px;
+    color: var(--inverseprimary-color);
+    
+}
+.header-main-sm-in{
+    width: 40px;
+    height: 20px;
+    background-image:url(../images/xiaohongshu_trans.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header-main-sm-in:hover{
+    width: 40px;
+    height: 20px;
+    background-image:url(../images/xiaohongshu_red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon-container{
+    position: relative;
+}
+.icon-container::before {
+    content: "\f186"; /* Ví dụ icon ban đầu */
+}
+  
+.icon-container.clicked::before {
+    content: "\f185"; /* Ví dụ icon khi click */
+}
+
+
+.header-main-sm .fas.fa-moon{
+    width: 20px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+.header-main-sm .fas.fa-moon:hover{
+    content: "fas fa-sun";
+    width: 20px;
+    cursor: pointer;
+    color: var(--inverseprimary-color);
+}
+
+.header-main-sm .fas.fa-sun{
+    width: 20px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+.header-main-sm .fas.fa-sun:hover{
+    content: "fas fa-sun";
+    width: 20px;
+    cursor: pointer;
+    color: var(--inverseprimary-color);
+}
