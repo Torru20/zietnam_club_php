@@ -12,12 +12,63 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    width: 100vw;
+    height: 35vh;
+    
 
 }
-.settings_images_id{
+ .settings_images_id{
     display: flex;
     flex-direction: row;
+    width: 50vw;
+
+
+} 
+.settings_images_id img{
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #007BFF;
+
 }
+.settings_images_id h4{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.settings_info_user{
+    padding:30px;
+    font-size: 20px;
+    margin-bottom: 20px; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.button {
+    display: inline-block; 
+    padding: 10px 20px; 
+    background-color: #007BFF; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    text-align: center; 
+    transition: background-color 0.3s;
+    border-color:0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3; 
+    cursor: pointer; 
+}
+
+.settings_button {
+    margin: 10px; 
+}
+.setting_btn{
+    display: flex;
+    justify-content:flex-start; /* Căn giữa theo chiều ngang */
+    flex-direction: row;
+    align-items: center; /* Căn giữa theo chiều dọc */
+
+}
+
 
 

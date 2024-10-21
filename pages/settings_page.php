@@ -21,29 +21,31 @@
 
     <div class="settings_container">
         <div class="settings_images_id">
-            <img src="" alt="">
-            <h2>id</h2>
+            <img src="../images/Hinhdaidien.jpg" alt="User Avatar">
+            <h4>ID:</h4>
         </div>
 
-        <div class="settings_info">
+       
             <div class="settings_info_user">
                 <p>
                     Name:<br>
                     Email:<br>
-                    Address:<br>
-                    Phone:
+                    Phone:<br>
+                    Address:
                 </p>
             </div>
-        </div>
+       
+
+     </div>
+     <div class="setting_btn">
         <div class="settings_button">
-            <a>Cai dat</a>
+            <a href="login_page.php" class="button">Sign out</a>
+         </div>
+         <div class="settings_transfer">
+            <a href="login_page.php" class="button">Transfer accounts</a>
         </div>
-
-    </div>
-    <div>
-        
-
-    </div>
+     </div>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
