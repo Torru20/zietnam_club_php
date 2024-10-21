@@ -1,0 +1,38 @@
+@import "../css/pallete.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--surface-color) ;
+    background: linear-gradient(to right,var(--secondary-color),var(--surface-color));
+    padding: 30px;
+    margin: 20px;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    */
+    
+}
+.h-100{
+    background-color: var(--tertiary-color) ;
+
+}
+.card-text{
+    color: var(--primary-color);
+}
+.card-title{
+    color: var(--inverseprimary-color) ;
+}
+.btn-primary{
+    background-color: var(--primary-color) ;
+    color: var(--tertiary-color);
+}
+.btn-primary:hover{
+    background-color: var(--secondary-color);
+    color: var(--inverseprimary-color);
+}

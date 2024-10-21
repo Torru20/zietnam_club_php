@@ -17,7 +17,9 @@
         require "../components/nav_bar.php";
     ?>
     <div class="post-body">
+        <h1></h1>
         <?php
+
             include "../components/post.php";
             include "../components/post.php";
             include "../components/post.php";

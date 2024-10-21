@@ -61,6 +61,7 @@
     }
     textarea#floatingTextarea2 {
         color:var(--primary-color);
+        background-color: var(--tertiary-color);
     }
     
     .btn-post-form {
@@ -104,8 +105,8 @@
         </div>
         
         <div class="btn-post-form">
-            <button id="btn-cancel">Hủy</button>
-            <button type="submit">Gửi</button>
+            <button id="btn-cancel">Cancel</button>
+            <button type="submit">OK</button>
         </div>
     </form>
 </div>

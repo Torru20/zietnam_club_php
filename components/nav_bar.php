@@ -12,7 +12,7 @@
           <a class="nav-link" aria-current="page" href="../pages/index.php">H O M E</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">S T U D Y</a>
+          <a class="nav-link" href="../pages/study_page.php">S T U D Y</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
