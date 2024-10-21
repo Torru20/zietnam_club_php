@@ -25,7 +25,7 @@
             <h2>id</h2>
         </div>
 
-        <div class="setting_info">
+        <div class="settings_info">
             <div class="settings_info_user">
                 <p>
                     Name:<br>
@@ -34,10 +34,9 @@
                     Phone:
                 </p>
             </div>
-            <button>
-                
-            </button>
-
+        </div>
+        <div class="settings_button">
+            <a>Cai dat</a>
         </div>
 
     </div>
