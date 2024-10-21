@@ -22,14 +22,14 @@
             C L U B
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">F O R U M</a></li>
+            <li><a class="dropdown-item" href="../pages/forum_page.php">F O R U M</a></li>
             <li><a class="dropdown-item" href="#">C H A T C H I T</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Do you need some help?</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">S E T T I N G S</a>
+          <a class="nav-link" href="../pages/settings_page.php">S E T T I N G S</a>
         </li>
         
       </ul>
