@@ -82,7 +82,7 @@ a{
 .btn-secondary{
     color: var(--inverseprimary-color);
     background-color: var(--surface-color);
-    border: var(--primary-color);
+    border: solid 2px var(--inverseprimary-color);
 }
 .btn-secondary:hover{
     color: var(--surface-color);

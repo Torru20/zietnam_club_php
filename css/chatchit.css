@@ -36,19 +36,33 @@ body{
 }
 .message {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
   }
   
 .message-user1 {
-    background-color: #f0f0f0;
+    background-color:var(--primary-color)
 }
 
 .message-user2 {
-    background-color: #e0e0e0;
+    background-color:var(--secondary-color)
     text-align: right;
 }
 .chat-input{
-    margin-top: auto;
+    margin-top: 10px;
     text-align: right;
+}
+.chat-input input{
+    background-color:var(--surface-color);
+}
+.chat-input button{
+    margin-top: 10px;
+    border-color: var(--inverseprimary-color);
+    color: var(--text);
+    background-color:var(--inverseprimary-color);
+}
+.chat-input button:hover{
+    color: var(--text);
+    background-color:var(--primary-color);
+    border-color: var(--primary-color);
 }

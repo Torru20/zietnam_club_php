@@ -20,6 +20,7 @@ surface:  Color(0xFFEEF5FF),
     --secondary-color: #9EB8D9;
     --inverseprimary-color: #A25772;
     --tertiary-color: white;
+    --text: black;
 }
 .dark-theme{
     --surface-color: rgba(5, 25, 51, 1);
@@ -27,4 +28,5 @@ surface:  Color(0xFFEEF5FF),
     --secondary-color: rgba(101, 138, 192, 1);
     --inverseprimary-color: rgba(236, 166, 193, 1);
     --tertiary-color: black;
+    --text: white;
 }
