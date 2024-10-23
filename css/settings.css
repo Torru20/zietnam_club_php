@@ -8,12 +8,10 @@ a{
 }
 .settings_container{
     padding: 20px;
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100vw;
-    height: 35vh;
     
 
 }
@@ -32,43 +30,63 @@ a{
     border: 2px solid #007BFF;
 
 }
-.settings_images_id h4{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+#box-user-Id{
+    color: var(--secondary-color);
+    background-color: transparent;
+    border: transparent;
 }
-.settings_info_user{
-    padding:30px;
-    font-size: 20px;
-    margin-bottom: 20px; 
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+.form-floating{
+    margin: 40px;
 }
-.button {
-    display: inline-block; 
-    padding: 10px 20px; 
-    background-color: #007BFF; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    font-size: 16px; 
-    text-align: center; 
-    transition: background-color 0.3s;
-    border-color:0.3s;
+#floatingInputDisabled {
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+    border: var(--primary-color);
 }
-
-.button:hover {
-    background-color: #0056b3; 
-    cursor: pointer; 
+#floatingTextareaDisabled {
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+    border: var(--primary-color);
 }
-
-.settings_button {
-    margin: 10px; 
+#floatingTextarea2Disabled{
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+    border: var(--primary-color);
+    
+}
+#floatingTextarea2Disabled label {
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+}
+#floatingSelectDisabled{
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+    border: var(--primary-color);
 }
 .setting_btn{
+    margin: 40px;
+    align-items: center;
     display: flex;
-    justify-content:flex-start; /* Căn giữa theo chiều ngang */
-    flex-direction: row;
-    align-items: center; /* Căn giữa theo chiều dọc */
-
+    justify-content: space-between;
+}
+.btn-outline-primary{
+    color: var(--inverseprimary-color);
+    border-color: var(--inverseprimary-color);
+}
+.btn-outline-primary:hover{
+    color: var(--surface-color);
+    background-color: red;
+    border-color: red;
 }
 
-
+.btn-secondary{
+    color: var(--inverseprimary-color);
+    background-color: var(--surface-color);
+    border: var(--primary-color);
+}
+.btn-secondary:hover{
+    color: var(--surface-color);
+    background-color: var(--inverseprimary-color);
+    border: var(--inverseprimary-color);
+}
 
