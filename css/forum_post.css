@@ -82,13 +82,18 @@ body{
     column-gap: 10px;
     color: var(--inverseprimary-color);
 }
-
+.post-like .far.fa-heart{
+    color:var(--inverseprimary-color) ;
+}
 .post-like:hover .far.fa-heart::before{
     content: "\f004";
     color:var(--inverseprimary-color);
     font-weight: 900;
 }
 
+.post-cmt .far.fa-comment{
+    color:var(--primary-color);
+}
 .post-cmt:hover .far.fa-comment::before{
     content: "\f075";
     color:var(--primary-color);
