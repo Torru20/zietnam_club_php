@@ -6,9 +6,15 @@
         right: 20px;
         background-color: var(--primary-color);
         color: white;
-        border-radius: 50%;
+        border-radius: 50%; /* Ensures a perfect circle */
         padding: 20px;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        width: 60px; /* Adjust the width and height for desired size */
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
     }
     .floating-button:hover {
         background-color: var(--inverseprimary-color);
