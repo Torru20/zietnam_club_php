@@ -1,0 +1,54 @@
+@import "../css/pallete.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--surface-color) ;
+    background: linear-gradient(to right,var(--secondary-color),var(--surface-color));
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    position: relative;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    */
+    
+}
+.container{
+    margin: auto;
+}
+
+.chat-messages{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 50vh;
+
+}
+.message {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+.message-user1 {
+    background-color: #f0f0f0;
+}
+
+.message-user2 {
+    background-color: #e0e0e0;
+    text-align: right;
+}
+.chat-input{
+    margin-top: auto;
+    text-align: right;
+}

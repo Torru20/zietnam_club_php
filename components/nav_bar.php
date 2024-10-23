@@ -20,7 +20,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../pages/forum_page.php">F O R U M</a></li>
-            <li><a class="dropdown-item" href="#">C H A T C H I T</a></li>
+            <li><a class="dropdown-item" href="../pages/chat_page.php">C H A T C H I T</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Do you need some help?</a></li>
           </ul>
