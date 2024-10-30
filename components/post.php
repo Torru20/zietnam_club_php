@@ -16,9 +16,17 @@
         <a href="" class="post-like">
             <i class="far fa-heart"></i>
         </a>
-        <a href="" class="post-cmt">
+
+        <a class="post-cmt" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="far fa-comment"></i>
         </a>
+        
 
     </div>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            go cmt vao day
+        </div>
+        </div>
+    
 </div>

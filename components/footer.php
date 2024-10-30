@@ -6,10 +6,10 @@
     </a>
 
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li class="nav-item"><a href="../pages/index.php" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="../pages/study_page.php" class="nav-link px-2 text-body-secondary">Study</a></li>
+      <li class="nav-item"><a href="../pages/forum_page.php" class="nav-link px-2 text-body-secondary">Forum</a></li>
+      <li class="nav-item"><a href="../pages/chat_page.php" class="nav-link px-2 text-body-secondary">Chat Chit</a></li>
+      <li class="nav-item"><a href="../pages/settings_page.php" class="nav-link px-2 text-body-secondary">Settings</a></li>
     </ul>
   </footer>
