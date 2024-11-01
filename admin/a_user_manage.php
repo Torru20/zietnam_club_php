@@ -19,6 +19,9 @@
         .form-control::placeholder{
             color: var(--text);
         }
+        h3{
+          padding-top:50px;
+        }
         
     </style>
 </head>
@@ -27,8 +30,9 @@
         require "../components/a_navbar.php";
     ?>
     <div class="container-md">
+    
         <div class="container text-center">
-            
+        <h3>User list</h3>
 
             <div class="row align-items-start">
                 <div class="col">
@@ -66,7 +70,10 @@
                   <input type="text" class="form-control" placeholder="user email" aria-label="Bans" aria-describedby="Bans">
               </div>
 
+              
+
             </div>
+            <button type="button" class="btn btn-primary">Search</button>
         </div>
         
     </div>
