@@ -16,10 +16,6 @@
         <?php
 
             include "../components/post.php";
-            include "../components/post.php";
-            include "../components/post.php";
-            include "../components/post.php";
-            include "../components/post.php";
 
             include "../components/floating-button.php";
         ?>

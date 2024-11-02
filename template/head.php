@@ -14,24 +14,5 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: var(--surface-color) ;
-    background: linear-gradient(to right,var(--secondary-color),var(--surface-color));
 
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    position: relative;
-    /*
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    */
-    
-}
 </style>
