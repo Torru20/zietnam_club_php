@@ -42,11 +42,12 @@
             </select>
         <label for="floatingSelectDisabled">Works with selects</label>
     </div>
-
+    
     <div class="setting_btn">
-        <a class="btn btn-outline-primary" href="#" role="button">Sign out</a>
+        <a class="btn btn-outline-primary" href='..zietnam_club_php/includes/logout.php' role="button">Sign out</a>
         <button class="btn btn-secondary" type="submit">Change Profile</button>
     </div>
+    <a href='<?php echo BASE_URL; ?>includes/logout.php'><i class="fa fa-power-off"></i><span>Logout</span></a>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

@@ -1,3 +1,10 @@
+<?php
+	include '../core/init.php';
+	if($getFromU->loggedIn() === true){
+		header('Location: forum_page.php');
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
