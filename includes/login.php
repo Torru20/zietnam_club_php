@@ -23,7 +23,7 @@ if(isset($_POST['login']) && !empty($_POST['login'])) {
 }
 ?>
 
-<div class="form-container sign-in">
+
     <form method="post">
         <h1>Log in</h1>
         <div class="social-icons">
@@ -40,7 +40,6 @@ if(isset($_POST['login']) && !empty($_POST['login'])) {
         
         <a href="#">Forgot your password</a>
         <button name="login" value="login" type="submit">Sign In</button>
-        <input class="new-btn col-2 mt-1" name="login" type="submit" value="login" style="height: 50px; font-size:20px;">
         <?php
         if(isset($errorMsg)){
                 echo '<div class="alert alert-danger" role="alert"style="width: 400px; margin:20px auto;text-align:center;">
@@ -50,4 +49,3 @@ if(isset($_POST['login']) && !empty($_POST['login'])) {
         ?> 
     
     </form>
-</div>
