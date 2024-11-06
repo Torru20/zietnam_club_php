@@ -1,10 +1,3 @@
-<?php
-	include '../core/init.php';
-	if($getFromU->loggedIn() === true){
-		header('Location: forum_page.php');
-	}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,9 +38,8 @@
             </div>
 
             <?php
- 
             if ($_SERVER['REQUEST_METHOD'] == "GET" && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-            header('Location: ../pages/index.php');
+            header('Location: forum_page.php');
             }
             if(isset($_POST['login']) && !empty($_POST['login'])) {
                 $email = $_POST['email'];

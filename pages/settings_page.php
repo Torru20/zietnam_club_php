@@ -44,7 +44,8 @@
     </div>
     
     <div class="setting_btn">
-        <a class="btn btn-outline-primary" href='..zietnam_club_php/includes/logout.php' role="button">Sign out</a>
+        <a class="btn btn-outline-primary" href='../includes/logout.php' role="button">Sign out</a>
+        <a href='<?php echo BASE_URL; ?>includes/logout.php'><span>Logout</span></a>
         <button class="btn btn-secondary" type="submit">Change Profile</button>
     </div>
     <a href='<?php echo BASE_URL; ?>includes/logout.php'><i class="fa fa-power-off"></i><span>Logout</span></a>

@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <?php
-    require "../template/head.php";
+    require "template/head.php";
   ?>
   
-  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="css/home.css">
   
 
 </head>
@@ -13,7 +14,7 @@
 <body>
   
   <?php
-    require "../components/nav_bar.php";
+    require "components/nav_bar.php";
   ?>
   
   
@@ -23,7 +24,7 @@
 
       <p id="hero-text"> for those who love Vietnam </p>
 
-      <a href="login_page.php"><button id="hero-button"> Go in </button></a>
+      <a href="pages/login_page.php"><button id="hero-button"> Go in </button></a>
     </div>
     
   </div>

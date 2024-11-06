@@ -12,6 +12,6 @@
     $getFromF = new Follow($pdo);
     $getFromM = new Message($pdo);
   
-  	define('BASE_URL', 'http://localhost/DOAN_PHP/');
+  	define('BASE_URL', 'http://localhost/DOAN_PHP/zietnam_club_php/');
  ?>                                                   
  

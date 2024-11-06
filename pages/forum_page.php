@@ -1,3 +1,13 @@
+<?php
+include '../core/init.php';
+$user_id = $_SESSION['user_id'];
+$user = $getFromU->userData( $user_id );
+$notify  = $getFromM->getNotificationCount( $user_id );
+
+if ( $getFromU->loggedIn() === false ) {
+    header( 'Location: '.BASE_URL.'index.php' );
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
