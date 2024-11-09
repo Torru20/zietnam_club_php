@@ -36,24 +36,199 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="../assets/css/style-complete.css"/>
     <link rel="stylesheet" href="../assets/css/font-awesome.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+CU:wght@100..400&family=Playwrite+VN:wght@100..400&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+
+    <style>
+        @import "../css/pallete.css";
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: var(--surface-color) ;
+            background: linear-gradient(to right,var(--secondary-color),var(--surface-color));
+            
+            /*
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            */
+            
+        }
+        .step-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 90vh;
+        }
+        .step-container {
+            background-color: var(--tertiary-color);
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+        .step-container p {
+            font-size: 14px ;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            margin: 20px 0;
+            
+        }
+        .step-container span {
+            font-size: 12px;
+            font-family: "Work Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .step-container a {
+            color: var(--primary-color);
+            font-size: 13px;
+            text-decoration: none;
+            margin: 15px 0 10px;
+        }
+        .step-container button{
+            background-color: var(--inverseprimary-color);
+            color: var(--tertiary-color);
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5 px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: "Work Sans", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+        .step-container form{
+            background-color: var(--tertiary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            height: 100%;
+        }
+        .step-container form h1{
+            font-family: "Playwrite VN", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            color: var(--inverseprimary-color);
+        }
+        .step-container form h4{
+            font-family: "Pacifico", system-ui;
+            
+            color: var(--text);
+        }
+        .step-container input{
+            background-color: var(--tertiary-color);
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+            font-family: "Work Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            font-style: normal;
+            color:var(--secondary-color);
+        }
+        .step-container input:focus{
+            background-color: var(--tertiary-color);
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+            font-family: "Work Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            color:#546da3;
+            box-shadow: 0 5px 15px var(--secondary-color);
+        }
+        form{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+            left: 0;
+            width: 100%;
+        }
+        .step-container ul li{
+            list-style-type: none;
+            color:var(--inverseprimary-color);
+        }
+        @import "../css/pallete.css";
+        .navbar-brand{
+            color: var(--inverseprimary-color);
+            font-family: "Playwrite VN", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+        }
+
+        .lets-wrapper{
+            width:90%;
+            padding: 20px;
+        }
+
+        .step-letsgo{
+            font-size: 22px;
+            font-family: "Playwrite VN", system-ui;
+            color: var(--text);
+        }
+
+        .step-letsgo h2,.step-letsgo p{
+            margin: 10px 0px;
+            color: var(--primary-color);
+            text-align: right; 
+
+        }
+        .backButton{
+            text-align: right;
+            color:var(--primary-color);
+            background-color: var(--tertiary-color);
+            text-decoration: none;
+            border-radius: 20px;
+            
+        }
+       
+        
+    </style>
 </head>
 <!--Helvetica Neue-->
 <body>
 <div class="wrapper">
 <!-- nav wrapper -->
-<div class="nav-wrapper">
+
 
 <div class="nav-container">
-    <div class="nav-second">
-        <ul>
-            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"style="color:white;"></i></a></li>
-        </ul>
-    </div><!-- nav second ends-->
+    <h1 class="navbar-brand">Zietnam Club</h1>
+    
 </div><!-- nav container ends -->
 
-</div><!-- nav wrapper end -->
 
 <!---Inner wrapper-->
 <div class="inner-wrapper">
@@ -64,11 +239,10 @@
     <div class="step-wrapper">
         <div class="step-container">
             <form method="post" autocomplete="off">
-                <h2>Choose a Username</h2>
+                <h1>Choose a Username</h1>
                 <h4>Don't worry, you can always change it later.</h4>
-                <div class="form-group">
-                    <input class="form-control"type="text" name="username" placeholder="Username" style="font-size: 16px;"/>
-                </div>
+                
+                <input type="text" name="username" placeholder="Username">
                 <div>
                     <ul>
                         <li><?php if (isset($error)){echo $error;} ?></li>
@@ -76,8 +250,10 @@
                 </div>
                 <div>
                     <input type="submit" name="next" value="Next"/>
+                    <button type="submit" name="next" value="Next">Next</button>
                 </div>
-                </form>
+            </form>
+
         </div>
     </div>
 <?php } ?>
@@ -91,7 +267,7 @@
             Tell us about all the stuff you love and we'll help you get set up.
         </p>
         <span>
-            <a href='../home.php' class='backButton' style="color:var(--twitter-color);">Let's go!</a>
+            <a href='../pages/forum_page.php' class='backButton'>Let's go!</a>
         </span>
     </div>
 </div>
