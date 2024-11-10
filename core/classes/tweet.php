@@ -20,7 +20,7 @@ class Tweet extends User{
 	      $retweet = $this->checkRetweet($tweet->tweetID, $user_id);
 	      $user = $this->userData($tweet->retweetBy);
  	      echo '<div class="all-tweet">
-			      	<div class="t-show-wrap">
+			      	<div class="t-show-wrap" style="cursor: pointer;">
 			       	<div class="t-show-inner">
 			       '.((isset($retweet['retweetID']) ? $retweet['retweetID'] === $tweet->retweetID OR $tweet->retweetID > 0 : '') ? '
 			      	<div class="t-show-banner">
