@@ -94,21 +94,51 @@
 
 <div id="popup" style="display: none;">
     <h1>Say sth to everyone</h1>
-    <form method="post">
+    <form method="post" enctype='multipart/form-data'>
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput" placeholder="write here...">
             <label for="floatingInput">Topic</label>
         </div>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="sayyyy" id="floatingTextarea2" style="height: 100px"></textarea>
+            <textarea class="form-control" name='status' placeholder="sayyyy" id="floatingTextarea2" style="height: 100px"></textarea>
             <label for="floatingTextarea2">Write everything u want, bae...</label>
         </div>
-        
+        <div class='hash-box'>
+            <ul>
+            </ul>
+        </div>
+
+        <div class='tweet_icons-wrapper'>
+            <div class='t-fo-left tweet_icons-add'>
+                <ul>
+                    <input type='file' name='file' id='file' />
+                    <li><label for='file'><i class='fa fa-image' aria-hidden='true'></i></label>
+                        <i class="fa fa-bar-chart"></i>
+                        <i class="fa fa-smile-o"></i>
+                        <i class="fa fa-calendar-o"></i>
+                    </li>
+                    <span class='tweet-error'><?php if ( isset( $error ) ) {
+                        echo $error;
+                    } else if ( isset( $imgError ) ) {
+                        echo '<br>' . $imgError;
+                    }
+                    ?></span>
+                    <!--<i class="fa fa-image"></i>-->
+
+                </ul>
+            </div>
+        </div>
         <div class="btn-post-form">
             <button id="btn-cancel">Cancel</button>
-            <button type="submit">OK</button>
+            <button type="submit" name="tweet">OK</button>
         </div>
     </form>
+
+    <!--Tweet SHOW WRAPPER-->
+    <div class='tweets'>
+        <?php $getFromT->tweets( $user_id, 20 );
+        ?>
+    </div>
 </div>
 
 <script>

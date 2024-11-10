@@ -99,3 +99,226 @@ body{
     color:var(--primary-color);
     font-weight: 900;
 }
+
+/*------------------------------------------------------------------------------*/
+/*TWEET SHOW WRAPPER*/
+.all-tweet{
+	border-bottom: 1px solid var(--surface-color);
+/*    border-bottom: none;*/
+	padding: 5px 10px;
+	width: 100%;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+
+.t-show-wrap{
+    background-color: var(--tertiary-color);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: 10px;
+    padding: 30px;
+}
+.t-show-wrap img{
+	max-height: 90%;
+	max-width: 100%;
+	border-radius: 12px;
+}
+.t-show-inner{
+	padding: 10px;
+}
+.t-show-head{
+	width:100%;
+}
+.t-show-img{
+	width:20%;
+	float: left;
+	overflow: hidden;
+	margin-right: 4px;
+}
+.t-show-img img{
+	width: 55px;
+	height: 55px;
+	border: 1px solid var(--primary-color);
+	border-radius: 50%;
+}
+.t-s-head-content{
+	width:95%;
+}
+.t-h-c-name a{
+	font-size: 16px;
+	color: var(--text);
+	font-weight: bold;
+	text-decoration: none;
+    margin: 0px 0px;
+}
+.t-h-c-name a:hover{
+	text-decoration:underline;
+    color: var(--inverseprimary-color);
+}
+.t-h-c-name span{
+	font-weight: normal;
+	color: var(--primary-color);
+}
+.t-h-c-dis{
+	margin-left: 65px;
+	color: var(--text);
+    text-align: start;
+	font-size: 17px;
+    padding: 5px;
+    width: 90%;
+/*    background: red;*/
+}
+.t-h-c-dis a{
+	color:var(--primary-color);
+	text-decoration:none;
+	cursor:pointer;
+	font-weight: bold;
+ }
+.t-h-c-dis a:hover{
+	text-decoration: underline;
+    color:var(--primary-color);
+}
+.t-show-body{
+	max-height: 550px;
+	overflow: hidden;
+}
+.t-s-b-inner-in{
+ 	padding: 10px 0px;
+ 	overflow: hidden;
+    margin-left: 62px;
+}
+.t-s-b-inner{
+	width: 100%;
+	overflow: hidden;
+	float: right;
+}
+.t-show-banner-inner{
+	width: 88%;
+	font-size: 13px;
+	color: #b1b5b7;
+	padding: 5px 0px;
+}
+.t-show-banner-inner i{
+	color: #fcfcfc;
+	background: #17dd6d;
+	padding: 2px;
+	border-radius: 3px;
+	margin-right: 5px;
+}
+
+.t-show-footer{
+	width: 100%;
+	float: left;
+	overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-left: 65px;
+/*    align-items: center;*/
+/*    background: red;*/
+}
+
+.t-s-f-right{
+	width:90%;
+	float: right;
+	margin: 10px 0px;
+/*    background: red;*/
+}
+.t-s-f-right ul li{
+	float: left;
+	margin-right: 20%;
+}
+.t-s-f-right ul li button .fa{
+	text-decoration:none;
+	color: #c8cbce;
+	font-size: 17px;
+	cursor: pointer;
+}
+.t-s-f-right ul li a{
+	text-decoration:none;
+	color: #999;
+}
+.t-s-f-right ul li button{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.t-s-f-right ul li button span{
+	font-size: 12px;
+	padding: 0px;
+	position: relative;
+	left: 6px;
+	top: -1px;
+	color: #9C9A9A;
+	font-weight: bold;
+}
+
+ 
+
+.t-s-f-right ul li button.unlike-btn,.t-s-f-right ul li button.unlike-btn i,.t-s-f-right ul li button.unlike-btn span, .tweet-show-popup-footer-menu ul li button.unlike-btn{
+	color: rgb(224, 36, 94);
+}
+.t-s-f-right ul li button.retweet > .fa-share , .t-s-f-right ul li button.retweeted> .fa-retweet, .tweet-show-popup-footer-menu ul li button.retweeted, .img-popup-tweet-menu-inner > ul > li > button.retweeted{
+	color:skyblue;
+}
+.t-s-f-right ul li a:hover> .fa-heart-o{
+	color:red;
+}
+
+.t-s-f-right ul li button:hover> .fa-heart-o{
+	color:red;
+}
+.t-s-f-right ul li button:hover> .fa-retweet{
+	color:skyblue;
+}
+.t-s-f-right ul li button:hover> .fa-share{
+	color:#9dc5a2;
+}
+.retweet-t-s-b-inner{
+	width: 95%;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.retweet-t-s-b-inner-left{
+	width:30%;
+	float: left;
+}
+.retweet-t-s-b-inner-left img{
+	width: 125px;
+	height: 125px;
+	border-radius: 0px !important;
+}
+.retweet-t-s-b-inner-right{
+	width: 70%;
+	float: right;
+}
+
+.retweet-t-s-b-inner-right-text{
+	font-size: 15px;
+}
+
+.retweet-t-s-b-inner-right-text a{
+	text-decoration: none;
+	font-weight: bold;
+	color:#7fc400;
+	padding: 0px 3px;
+	cursor:pointer;
+}
+
+.retweet-t-s-b-inner-right-text a:hover{
+	text-decoration: underline;
+}
