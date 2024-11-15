@@ -20,8 +20,8 @@ class Tweet extends User{
 	      $retweet = $this->checkRetweet($tweet->tweetID, $user_id);
 	      $user = $this->userData($tweet->retweetBy);
  	      echo '<div class="all-tweet">
-			      	<div class="t-show-wrap" style="cursor: pointer;">
-			       	<div class="t-show-inner">
+			      <div class="t-show-wrap">
+			       <div class="t-show-inner">
 			       '.((isset($retweet['retweetID']) ? $retweet['retweetID'] === $tweet->retweetID OR $tweet->retweetID > 0 : '') ? '
 			      	<div class="t-show-banner">
 			      		<div class="t-show-banner-inner">
@@ -102,6 +102,8 @@ class Tweet extends User{
 			      		<div class="t-s-f-right">
 			      			<ul>
 			      				<li><button style="outline:none;"><i class="fa fa-comment" aria-hidden="true"></i></button></li>
+								
+
 			      				<li>'.((isset($retweet['retweetID']) ? $tweet->tweetID === $retweet['retweetID'] : '') ? 
 			      					'<button class="retweeted" data-tweet="'.$tweet->tweetID.'" data-user="'.$tweet->tweetBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true" style="outline:none;"></i><span class="retweetsCount">'.(($tweet->retweetCount > 0) ? $tweet->retweetCount : '').'</span></button>' : 
 			      					'<button class="retweet" data-tweet="'.$tweet->tweetID.'" data-user="'.$tweet->tweetBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true"></i><span class="retweetsCount">'.(($tweet->retweetCount > 0) ? $tweet->retweetCount : '').'</span></button>').'
