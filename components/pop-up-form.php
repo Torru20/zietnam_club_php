@@ -3,7 +3,7 @@
         background-color: var(--tertiary-color);
         padding: 40px;
         margin-top: 100px;
-
+        width: 60%;
         border-radius: 30px;
         position: fixed;
         z-index: 999;
@@ -134,11 +134,7 @@
         </div>
     </form>
 
-    <!--Tweet SHOW WRAPPER-->
-    <div class='tweets'>
-        <?php $getFromT->tweets( $user_id, 20 );
-        ?>
-    </div>
+   
 </div>
 
 <script>

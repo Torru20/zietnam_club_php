@@ -1,7 +1,7 @@
 <?php
 	include 'core/init.php';
 	if($getFromU->loggedIn() === true){
-		header('Location: pages/forum_page.php');
+		header('Location: forum_page.php');
 	}
 ?>
 <!DOCTYPE html>

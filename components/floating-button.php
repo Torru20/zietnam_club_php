@@ -27,7 +27,7 @@
     <i class="fas fa-plus"></i>
 </button>
 <?php
-    include "../components/pop-up-form.php";
+    include "components/pop-up-form.php";
 ?>
 <script>
     const btnPopup = document.getElementById('btn-popup');
