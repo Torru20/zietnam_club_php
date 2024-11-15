@@ -69,5 +69,16 @@ if ( isset( $_POST['tweet'] ) ) {
     <script src="../js/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+
+    <script type='text/javascript' src='../assets/js/like.js'></script>
+    <script type='text/javascript' src='../assets/js/retweet.js'></script>
+    <script type='text/javascript' src='../assets/js/popuptweets.js'></script>
+    <script type='text/javascript' src='../assets/js/delete.js'></script>
+    <script type='text/javascript' src='../assets/js/comment.js'></script>
+    <script type='text/javascript' src='../assets/js/popupForm.js'></script>
+    <script type='text/javascript' src='../assets/js/fetch.js'></script>
+    <script type='text/javascript' src='../assets/js/messages.js'></script>
+    <script type='text/javascript' src='../assets/js/notification.js'></script>
+    <script type='text/javascript' src='../assets/js/postMessage.js'></script>
 </body>
 </html>
