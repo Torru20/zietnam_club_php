@@ -40,7 +40,11 @@ if ( isset( $_POST['tweet'] ) ) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My forum</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/bird.svg">
+    <link rel = 'stylesheet' href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'/>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+CU:wght@100..400&family=Playwrite+VN:wght@100..400&family=Protest+Guerrilla&display=swap" rel="stylesheet">
@@ -50,16 +54,12 @@ if ( isset( $_POST['tweet'] ) ) {
     <link rel="stylesheet" href="css/reset.css">
     <style>
         @import "css/pallete.css";
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
 
     </style>
+    <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
+
     <link rel="stylesheet" href="css/forum_post.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/nav_bar.css">
     <link rel="stylesheet" href="css/nav_bar.css">
 </head>
 <body>
@@ -80,25 +80,43 @@ if ( isset( $_POST['tweet'] ) ) {
         
         
     </div>
-    <div class='tweets'>
-        <?php $getFromT->tweets( $user_id, 20 );
-        ?>
-    </div>
+    
+
+    <div class="main">
+            <div class=''>
+
+                <!--Tweet SHOW WRAPPER-->
+                <div class='tweets'>
+                    <?php $getFromT->tweets( $user_id, 20 );
+                    ?>
+                </div>
+                <!--TWEETS SHOW WRAPPER-->
+
+                <div class='loading-div'>
+                    <img id='loader' src='assets/images/loading.svg' style='display: none;' />
+                </div>
+                <div class='popupTweet'></div>
+                <!--Tweet END WRAPER-->
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/like.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/retweet.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popuptweets.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/delete.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/comment.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popupForm.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/fetch.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/notification.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/postMessage.js'></script>
+
+            </div><!-- in left wrap-->
+        </div><!-- in center end -->
+
+
     <script src="js/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
-    <script type='text/javascript' src='assets/js/like.js'></script>
-    <script type='text/javascript' src='assets/js/retweet.js'></script>
-    <script type='text/javascript' src='assets/js/popuptweets.js'></script>
-    <script type='text/javascript' src='assets/js/delete.js'></script>
-    <script type='text/javascript' src='assets/js/comment.js'></script>
-    <script type='text/javascript' src='assets/js/popupForm.js'></script>
-    <script type='text/javascript' src='assets/js/fetch.js'></script>
-    <script type='text/javascript' src='assets/js/messages.js'></script>
-    <script type='text/javascript' src='assets/js/notification.js'></script>
-    <script type='text/javascript' src='assets/js/postMessage.js'></script>
-
+    
     <script src="js/dark-mode.js"></script>
 </body>
 </html>

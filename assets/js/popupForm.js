@@ -4,7 +4,7 @@ $(function(){
 		$('.hash-box').removeClass().addClass('hash-removed');
 		$('#count').attr('id', 'count-removed');
 
-		$.post('http://localhost/twitter/core/ajax/tweetForm.php', function(data){
+		$.post('http://localhost/DOAN_PHP/zietnam_club_php/core/ajax/tweetForm.php', function(data){
 			$('.popupTweet').html(data);
 			$('.closeTweetPopup').click(function(){
 				$('.popup-tweet-wrap').hide();
@@ -19,7 +19,7 @@ $(function(){
 		var formData = new FormData($(this)[0]);
 		formData.append('file', $('#file')[0].files[0]);
 		$.ajax({
-			url: "http://localhost/twitter/core/ajax/addTweet.php",
+			url: "http://localhost/DOAN_PHP/zietnam_club_php/core/ajax/addTweet.php",
 			type: "POST",
 			data: formData,
 			success: function(data){
