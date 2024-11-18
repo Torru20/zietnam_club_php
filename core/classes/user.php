@@ -42,7 +42,7 @@ class User{
 
 		if($count > 0){
 			$_SESSION['user_id'] = $user->user_id;
-			header('Location: pages/forum_page.php');
+			header('Location: forum_page.php');
 		}else{
 			return false;
 		}

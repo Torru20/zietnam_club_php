@@ -9,24 +9,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../pages/index.php">H O M E</a>
+          <a class="nav-link" aria-current="page" href="pages/index.php">H O M E</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/study_page.php">S T U D Y</a>
+          <a class="nav-link" href="pages/study_page.php">S T U D Y</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             C L U B
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="../pages/forum_page.php">F O R U M</a></li>
-            <li><a class="dropdown-item" href="../pages/chat_page.php">C H A T C H I T</a></li>
+            <li><a class="dropdown-item" href="forum_page.php">F O R U M</a></li>
+            <li><a class="dropdown-item" href="pages/chat_page.php">C H A T C H I T</a></li>
+            <li><a class="dropdown-item" id="messagePopup" href="#">Click</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Do you need some help?</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/settings_page.php">S E T T I N G S</a>
+          <a class="nav-link" href="pages/settings_page.php">S E T T I N G S</a>
         </li>
         
       </ul>
