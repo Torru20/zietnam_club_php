@@ -17,9 +17,8 @@
     .offcanvas-body p{
         color:var(--text);
     }
-
-
 </style>
+
 <?php
     $user_id = $_SESSION['user_id'];
     $messages = $getFromM->recentMessages($user_id);
@@ -44,7 +43,7 @@
             <ul class="search-result down">
                     
             </ul>
-            <script type="text/javascript" src="../assets/js/search.js"></script>
+            <script type="text/javascript" src="assets/js/search.js"></script>
             
             <div class="list-group">
                 <div class="message-body">
