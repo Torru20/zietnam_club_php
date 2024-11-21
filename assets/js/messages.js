@@ -9,7 +9,7 @@ $(function(){
 
 	$(document).on('click', '.people-message', function(){
 		var get_id = $(this).data('user');
-		$.post('http://localhost/twitter/core/ajax/messages.php', {showChatPopup:get_id}, function(data){
+		$.post('http://localhost/DOAN_PHP/zietnam_club_php/chat_page.php', {showChatPopup:get_id}, function(data){
 			$('.popupTweet').html(data);
 			if(autoscroll){
 				scrollDown();
