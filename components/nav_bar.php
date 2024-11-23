@@ -27,7 +27,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/settings_page.php">S E T T I N G S</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>settings_page.php">S E T T I N G S</a>
         </li>
         
       </ul>
