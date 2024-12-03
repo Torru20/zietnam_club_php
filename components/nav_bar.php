@@ -22,6 +22,7 @@
             <li><a class="dropdown-item" href="forum_page.php">F O R U M</a></li>
             <li><a class="dropdown-item" href="chat_page.php">C H A T C H I T</a></li>
             <li><a class="dropdown-item" id="messagePopup" href="#">Click</a></li>
+            
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Do you need some help?</a></li>
           </ul>
@@ -29,6 +30,9 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>settings_page.php">S E T T I N G S</a>
         </li>
+        <li><a href='<?php echo BASE_URL; ?>includes/logout.php'><i class="fa fa-power-off"></i><span>Logout</span></a></li>
+        <li><a href="<?php echo BASE_URL;?>notification.php"><i class="fa fa-bell" aria-hidden="true"></i><span>Notifications</span><span id="notificaiton" class="ml-0"><?php if($notify->totalN > 0){echo '<span class="span-i">'.$notify->totalN.'</span>';}?></span></a></li>
+                
         
       </ul>
         <div class="header-main-sm">
