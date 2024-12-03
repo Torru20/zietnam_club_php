@@ -1,14 +1,14 @@
-<?php
-include 'core/init.php';
-$user_id = $_SESSION['user_id'];
-$user = $getFromU->userData( $user_id );
-$notify  = $getFromM->getNotificationCount( $user_id );
-
-if ( $getFromU->loggedIn() === false ) {
-    header( 'Location: '.BASE_URL.'index.php' );
-}
-
-
+<?php 
+	include 'core/init.php';
+ 	$user_id = $_SESSION['user_id'];
+	$user    = $getFromU->userData($user_id);
+	$getFromM->notificationViewed($user_id);
+	$notify  = $getFromM->getNotificationCount($user_id);
+	if($getFromU->loggedIn() === false){
+		header('Location: index.php');
+	}
+	$notification  = $getFromM->notification($user_id);
+ 
 ?>
 
 
@@ -60,12 +60,6 @@ if ( $getFromU->loggedIn() === false ) {
 
     </div>
   
-  
-    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/like.js'></script>
-    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/retweet.js'></script>
-    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popuptweets.js'></script>
-    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/delete.js'></script>
-    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/comment.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popupForm.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/fetch.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages.js'></script>
