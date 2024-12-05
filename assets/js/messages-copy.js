@@ -6,8 +6,6 @@ $(function(){
 			$('#messages').hide();
   		});
 	});
-	$('#btn-show-popup').click(function() {
-		$('#popup-content').show();});
 
 	$(document).on('click', '.people-message', function(){
 		var get_id = $(this).data('user');
@@ -74,7 +72,7 @@ $(function(){
 			});
 
 			$(document).on('click', '.delete', function(){
-				$.post('http://localhost/DOAN_PHP/zietnam_club_php/chat_page.php', {deleteMsg:messageID}, function(data){
+				$.post('http://localhost/DOAN_PHP/zietnam_club_php/core/ajax/messages-copy.php', {deleteMsg:messageID}, function(data){
 					$('.message-del-inner').height('0px');
 					getMessages();
 				})

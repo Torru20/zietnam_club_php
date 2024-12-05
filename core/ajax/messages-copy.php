@@ -56,6 +56,7 @@
 					<?php foreach($messages as $message) :?>
 						<!--Direct Messages-->
 						<div class="people-message" data-user="<?php echo $message->user_id;?>">
+							
 							<div class="people-inner">
 								<div class="people-img">
 									<img src="<?php echo BASE_URL.$message->profileImage;?>"/>
@@ -125,7 +126,7 @@
 					</div>
 				</div>
 			</div>
-			</div>
+		</div>
 		<?php
 	}
 
@@ -141,12 +142,12 @@
 			<div class="message-send2">
 				<div class="message-header2">
 					<div class="message-h-left">
-						<label class="back-messages" for="mass"><i class="fa fa-angle-left" aria-hidden="true"></i></label>
+						<label class="close-msgPopup" for="message-body" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></label>
 					</div>
 					<div class="message-h-cen">
 						<div class="message-head-img">
-						  <img src="<?php echo BASE_URL.$user->profileImage;?>"/><h4>Messages</h4>
-						  <?php include "../../components/chat_user_list.php"; ?>
+						  <img src="<?php echo BASE_URL.$user->profileImage;?>"/>
+						  <h4><?php echo $user->screenName;?></h4>
 						</div>
 					</div>
 					<div class="message-h-right">

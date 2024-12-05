@@ -17,21 +17,23 @@
     .offcanvas-body p{
         color:var(--text);
     }
+    .offcanvas-backdrop.fade {
+        z-index:10002;
+    }
 </style>
 
 <?php
     $user_id = $_SESSION['user_id'];
     $messages = $getFromM->recentMessages($user_id);
     $getFromM->messagesViewed($user_id);
-    
-
+//<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-chevron-left"></i></button>
 ?>
 
 
 <div class="chat-user-list">
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-chevron-left"></i></button>
+    
 
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" style="z-index:10003;">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Recent</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -50,13 +52,13 @@
 					<div class="message-recent">
 					<?php foreach($messages as $message) :?>
 						<!--Direct Messages-->
-						<div class="people-message" data-user="<?php echo $message->user_id;?>">
+						<div data-bs-dismiss="offcanvas" class="people-message" data-user="<?php echo $message->user_id;?>">
 							<div class="people-inner">
 								<div class="people-img">
 									<img src="<?php echo BASE_URL.$message->profileImage;?>"/>
 								</div>
 								<div class="name-right2">
-									<span><a href="#"><?php echo $message->screenName;?></a></span><span>@<?php echo $message->username;?></span>
+									<span data-bs-dismiss="offcanvas"><a href="#"><?php echo $message->screenName;?></a></span><span>@<?php echo $message->username;?></span>
 								</div>
 								
 								<span>

@@ -38,16 +38,53 @@ if ( $getFromU->loggedIn() === false ) {
     <link rel="stylesheet" href="css/forum_post.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav_bar.css">
+    <style>
+        @import "css/pallete.css";
+        .new-chat {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .new-chat h2 {
+        color: var(--primary-color);
+        
+        margin-top: 10px;
+    }
+    .new-chat-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%; /* Ensures a perfect circle */
+        padding: 20px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        width: 60px; /* Adjust the width and height for desired size */
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+    .new-chat-btn:hover {
+        background-color: var(--inverseprimary-color);
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    }
+        
+
+    </style>
 </head>
 <body>
     <?php
         require "components/nav_bar.php";
     ?>
         <!--Tweet SHOW WRAPPER-->
-    
-        <?php include "components/chat_user_list.php"; ?>
-       
-        
+    <?php include "components/chat_user_list.php"; ?>
+    <div class="new-chat">
+        <button class="new-chat-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fas fa-plus"></i></button>
+        <h2>New chat</h2>
+    </div>
     
     
 
