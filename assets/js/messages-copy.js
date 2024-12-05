@@ -1,15 +1,17 @@
 $(function(){
 	$(document).on('click', '#messageStart', function(){
 		var getMessages = 1;
-		$.post('http://localhost/DOAN_PHP/zietnam_club_php/chat_page.php', {showMessage:getMessages}, function(data){
+		$.post('http://localhost/DOAN_PHP/zietnam_club_php/core/ajax/messages-copy.php', {showMessage:getMessages}, function(data){
 			$('.popupTweet').html(data);
 			$('#messages').hide();
   		});
 	});
+	$('#btn-show-popup').click(function() {
+		$('#popup-content').show();});
 
 	$(document).on('click', '.people-message', function(){
 		var get_id = $(this).data('user');
-		$.post('http://localhost/DOAN_PHP/zietnam_club_php/chat_page.php', {showChatPopup:get_id}, function(data){
+		$.post('http://localhost/DOAN_PHP/zietnam_club_php/core/ajax/messages-copy.php', {showChatPopup:get_id}, function(data){
 			$('.popupTweet').html(data);
 			if(autoscroll){
 				scrollDown();
@@ -27,7 +29,7 @@ $(function(){
 		});
 
 		getMessages = function(){
-			$.post('http://localhost//DOAN_PHP/zietnam_club_php/chat_page.php', {showChatMessage:get_id}, function(data){
+			$.post('http://localhost//DOAN_PHP/zietnam_club_php/core/ajax/messages-copy.php', {showChatMessage:get_id}, function(data){
 				$('.main-msg-inner').html(data);
 				if(autoscroll){
 					scrollDown();
@@ -57,7 +59,7 @@ $(function(){
 
 		$(document).on('click', '.back-messages', function(){
 			var getMessages = 1;
-			$.post('http://localhost/DOAN_PHP/zietnam_club_php/chat_page.php', {showMessage:getMessages}, function(data){
+			$.post('http://localhost/DOAN_PHP/zietnam_club_php/core/ajax/messages-copy.php', {showMessage:getMessages}, function(data){
 				$('.popupTweet').html(data);
 				clearInterval(timer);
 			});	

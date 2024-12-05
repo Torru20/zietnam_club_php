@@ -45,28 +45,13 @@ if ( $getFromU->loggedIn() === false ) {
     ?>
         <!--Tweet SHOW WRAPPER-->
     
-
+        <?php include "components/chat_user_list.php"; ?>
+       
         
-        
-    <div class="container">
-        <div class="chat-window">
-            <div class="chat-header">
-                <div class="row">
-                    <div class="col-md-2">
-                        <?php include "components/chat_user_list.php"; ?>
-                    </div>
-                    <div class="col-md-10">
-                        <h2>Tên cuộc trò chuyện</h2>
-                        <p>Mô tả ngắn về cuộc trò chuyện</p>
-                    </div>
-                </div> 
-            </div>
-            
-            
-            <a class="dropdown-item" id="messagePopup" href="#">Click</a>
-        </div>
-    </div>
     
+    
+
+
 
 
         <div class="main">
@@ -87,7 +72,7 @@ if ( $getFromU->loggedIn() === false ) {
                 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/comment.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popupForm.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/fetch.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages.js'></script>
+
                 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages-copy.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/notification.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/postMessage.js'></script>
