@@ -62,6 +62,7 @@
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/bootstrap.css' />
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style-complete.css" />
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css" />
+    <link rel="stylesheet" href="css/forum_post.css">
     <script src="<?php echo BASE_URL; ?>assets/js/jquery-3.1.1.min.js"></script>
     	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>

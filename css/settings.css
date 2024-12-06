@@ -90,3 +90,8 @@ a{
     border: var(--inverseprimary-color);
 }
 
+.space{
+    height:5px; 
+    width:100%; 
+    background:var(--surface-color);
+}

@@ -40,6 +40,7 @@ include 'core/init.php';
       	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style.css' />
+    <link rel="stylesheet" href="css/forum_post.css">
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/font-awesome.css' />
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/bootstrap.css' />
     <link rel="stylesheet" href="css/nav_bar.css">
@@ -95,20 +96,20 @@ include 'core/init.php';
                             <div class="profile-follow mt-2 d-flex">
                                 <h6 class="mr-3 ml-1" style="font-weight: 700;"><?php echo $profileData->following; ?>
                                     <a href="<?php echo BASE_URL; ?>following.php">
-                                        <a href="<?php echo BASE_URL; ?>following.php" style="color:rgb(91, 112, 131);">Following</a>
+                                        <a href="<?php echo BASE_URL; ?>following.php" style="color:var(--text);">Following</a>
                                     </a></h6>
                                 <h6 class="mr-3"style="font-weight: 700;"><?php echo $profileData->followers; ?>
-                                <a href="<?php echo BASE_URL.$profileData->username; ?>/followers"style="color:rgb(91, 112, 131);">
+                                <a href="<?php echo BASE_URL.$profileData->username; ?>/followers"style="color:var(--text);">
                                     Followers
                                 </a></h6>
                                 <h6 style="font-weight: 700;">
                                 <?php echo $getFromT->countTweets($profileId); ?>
-                                <a style="color:rgb(91, 112, 131);">Posts</a></h6>
+                                <a style="color:var(--text);">Posts</a></h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="space" style="height:10px; width:100%; background:rgba(230, 236, 240, 0.5);">
+                <div class="space">
                 </div>
                 <!--TWEET WRAP END-->
 

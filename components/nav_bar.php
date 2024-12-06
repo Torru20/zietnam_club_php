@@ -30,8 +30,14 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>settings_page.php">S E T T I N G S</a>
         </li>
-        <li><a href='<?php echo BASE_URL; ?>includes/logout.php'><i class="fa fa-power-off"></i><span>Logout</span></a></li>
-        <li><a href="<?php echo BASE_URL;?>notification.php"><i class="fa fa-bell" aria-hidden="true"></i><span>Notifications</span><span id="notificaiton" class="ml-0"><?php if($notify->totalN > 0){echo '<span class="span-i">'.$notify->totalN.'</span>';}?></span></a></li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL;?>notification.php"><i class="fa fa-bell" aria-hidden="true"></i><span> N O T I F I C A T I O N S</span><span id="notificaiton" class="ml-0"><?php if($notify->totalN > 0){echo '<span class="span-i">'.$notify->totalN.'</span>';}?></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href='<?php echo BASE_URL; ?>includes/logout.php'><i class="fa fa-power-off"></i><span> L O G  O U T</span></a>
+        </li>
+        
                 
         
       </ul>
