@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "GET" && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-header('Location: ../forum_page.php');
+header('Location: pages/forum_page.php');
 }
 if(isset($_POST['login']) && !empty($_POST['login'])) {
     $email = $_POST['email'];

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,14 +147,38 @@
         <div class="container" id="container">
             
             <div class="form-container sign-in">
+            <?php
+            if(isset($_POST['login']) && !empty($_POST['login'])) {
+                $adminName = $_POST['admin_name'];
+                $password = $_POST['password'];
+
+                if( !empty($adminName) && !empty($password)) {
+                $adminName = $getFromA->checkInput($adminName);
+                $password = $getFromA->checkInput($password);
+                    if($getFromA->login($adminName, $password) === false){
+                    $errorMsg = "The email or password is incorrect!";
+                    }
+                
+                }else {
+                $errorMsg = "Please enter adminname and password!";
+                }
+            }
+            ?>
                 <form method="post">
                     <h1>Log in for admin</h1>
                     <h2>    </h2>
-                    <input type="text" placeholder="Email">
+                    <input type="text" name="admin_name" placeholder="Admin name">
+        
+                    <input type="password" name="password" placeholder="Password">
                     
-                    <input type="password" placeholder="Password">
-                    
-                    <button>Sign In</button>
+                    <button name="login" value="login" type="submit">Sign In</button>
+                    <?php
+                        if(isset($errorMsg)){
+                                echo '<div class="alert alert-danger" role="alert"style="width: 400px; margin:20px auto;text-align:center;">
+                                '.$errorMsg.'
+                                </div>';
+                    }
+                    ?>
                 </form>
             </div>
             
@@ -168,3 +194,6 @@
 
 </body>
 </html>
+
+
+
