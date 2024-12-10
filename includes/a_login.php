@@ -1,46 +1,37 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "GET" && realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-header('Location: pages/forum_page.php');
+header('Location: a_homepage.php');
 }
 if(isset($_POST['login']) && !empty($_POST['login'])) {
-    $email = $_POST['email'];
+    $adname = $_POST['adminname'];
     $password = $_POST['password'];
 
-    if(!empty($email) or !empty($password)) {
-    $email = $getFromU->checkInput($email);
-    $password = $getFromU->checkInput($password);
+    if(!empty($adname) or !empty($password)) {
+        $adname = $getFromA->checkInput($adname);
+        $password = $getFromA->checkInput($password);
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $errorMsg = "Invalid format";
-    }else {
-        if($getFromU->login($email, $password) === false){
-        $errorMsg = "The email or password is incorrect!";
-        }
+   
+    if($getFromA->login($adname, $password) === false){
+        $errorMsg = "The name or password is incorrect!";
+        
     }
     }else {
-    $errorMsg = "Please enter username and password!";
+    $errorMsg = "Please enter name and password!";
     }
 }
 ?>
 
 
     <form method="post">
-        <h1>Log in</h1>
-        <div class="social-icons">
-            <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+        <h1>Admin log in</h1>
 
-            <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></i></a>
-        </div>
-        <span>
-            or use your email for registeration
-        </span>
-        <input type="text" name="email" placeholder="Email">
+
+        <input type="text" name="adminname" placeholder="Email">
         
         <input type="password" name="password" placeholder="Password">
         
-        <a href="#">Forgot your password</a>
         <button name="login" value="login" type="submit">Sign In</button>
-        <a href="<?php echo BASE_URL; ?>admin/a_signin.php">ADMIN LOGIN HERE</a>
+
         <?php
         if(isset($errorMsg)){
                 echo '<div class="alert alert-danger" role="alert"style="width: 400px; margin:20px auto;text-align:center;">
