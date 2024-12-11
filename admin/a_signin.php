@@ -1,10 +1,9 @@
 <?php
 	include '../core/init.php';
 	if($getFromA->loggedIn() === true){
-		header('Location: a_homepage.php');
+		echo "<script>location.href = 'a_home.php?msg=$msg';</script>";
 	}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

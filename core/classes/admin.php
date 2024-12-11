@@ -1,5 +1,4 @@
 <?php 
-
 class Admin{
 	protected $pdo;
 
@@ -34,7 +33,9 @@ class Admin{
 
 		if($count > 0){
 			$_SESSION['adminID'] = $admin->adminID;
-			header('Location: a_home.php');
+			//header('Location: a_home.php');
+			echo "<script>location.href = 'a_home.php?msg=$msg';</script>";
+			return true;
 		}else{
 			return false;
 		}
