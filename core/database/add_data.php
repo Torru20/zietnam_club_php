@@ -22,7 +22,7 @@
         */
 
     $sql = "INSERT INTO `rents` (`houseID`, `description`, `houseOf`,`postImage`,`postedOn`,`price`,`status`) VALUES
-        (2,'homestay cho khach nuoc ngoai thue gia hop ly gan trung tam Q1', 8,'users/avtar2.jpg','2024-10-28 09:47:45',3000000,'waiting');";
+        (3,'homestay trung tam Q1', 9,'users/avtar2.jpg','2024-11-22 09:47:45',4000000,'waiting');";
     
     if (mysqli_query($conn, $sql)) {
         echo "Admin added successfully.";

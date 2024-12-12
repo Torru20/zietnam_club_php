@@ -7,8 +7,8 @@ class Rent extends User{
 	}
  
 	public function rents($user_id, $num){
-	    $stmt = $this->pdo->prepare("SELECT * FROM `rents` LEFT JOIN `users` ON `houseOf` = `user_id` WHERE `houseOf` = :user_id");
-        $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+		$stmt = $this->pdo->prepare("SELECT * FROM `rents`LEFT JOIN `users` ON `houseOf` = `user_id`");
+	    
         $stmt->execute();
 	    $rents = $stmt->fetchAll(PDO::FETCH_OBJ);
         echo'<div class="row row-cols-1 row-cols-md-3 g-4">';
@@ -27,15 +27,68 @@ class Rent extends User{
                         <h3>
                             '.$rent->price.'
                         </h3>
+						<button type="button" class="btn btn-outline-primary">Primary</button>
                     </div>
                     <div class="card-footer">
                         <small class="text-body-secondary">'.$this->timeAgo($rent->postedOn).'</small>
+						
                     </div>
+					
                 </div>
+				
             </div>
             ';
         }
         echo '</div>';
+    }
+
+
+	public function rentsByID($user_id){
+	    $stmt = $this->pdo->prepare("SELECT * FROM `rents` LEFT JOIN `users` ON `houseOf` = `user_id` WHERE `houseOf` = :user_id");
+        $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+	    $rents = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo'
+		<div class="table-responsive">
+			<table class="table table-hover my-table">
+				<thead>
+					<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Description</th>
+					<th scope="col">Image</th>
+					<th scope="col">Date</th>
+					<th scope="col">Price</th>
+					<th scope="col">Status</th>
+					<th scope="col">Delete</th>
+					</tr>
+				</thead>
+					<tbody class="table-group-divider">
+		';
+	    foreach ($rents as $rent) {
+			$user = $this->userData($rent->houseOf);
+			echo'
+			
+					
+						<tr>
+						<th scope="row">'.$rent->houseID.'</th>
+						<td>'.$rent->description.'</td>
+						<td>'.$rent->postImage.'</td>
+						<td>'.$rent->postedOn.'</td>
+						<td>'.$rent->price.'</td>
+						<td>'.$rent->status.'</td>
+						<td><button type="button" class="btn btn-outline-primary">Delete</button></td>
+						</tr>
+			';
+		}
+					
+		echo'
+						
+					</tbody>
+				</table>
+			</div>
+			
+			';
+        
     }
 
   

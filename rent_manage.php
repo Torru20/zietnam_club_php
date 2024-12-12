@@ -42,12 +42,8 @@ if ( $getFromU->loggedIn() === false ) {
     ?>
     <h1 style="margin-top:200px;">
 
-
-
-
-    
     </h1>
-    <?php $getFromR->rents($user_id, 20 );
+    <?php $getFromR->rentsByID($user_id);
                     ?>
 
 
