@@ -12,10 +12,10 @@
           <a class="nav-link" aria-current="page" href="../admin/a_home.php">H O M E</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../admin/a_user_manage.php">U S E R _ M A N A G E</a>
+          <a class="nav-link" href="../admin/a_rent_manage.php">R E N T _ M A N A G E</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../admin/a_study_page.php">C L A S S</a>
+          <a class="nav-link" href="../admin/a_user_manage.php">U S E R _ M A N A G E</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../pages/settings_page.php">S E T T I N G S</a>

@@ -1,7 +1,6 @@
 $(function(){
 	$(document).on('click', '.deleteTweet', function(){
 		var tweet_id = $(this).data('tweet');
-
 		$.post('http://localhost/twitter/core/ajax/deleteTweet.php', {showpopup:tweet_id}, function(data){
 			$('.popupTweet').html(data);
 			$('.close-retweet-popup,.cancel-it').click(function(){
@@ -9,6 +8,7 @@ $(function(){
 			});
 		});
 	});
+	
 
 	$(document).on('click','.delete-it', function(){
 		var tweet_id = $(this).data('tweet');
