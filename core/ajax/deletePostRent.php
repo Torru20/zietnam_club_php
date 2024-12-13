@@ -4,16 +4,19 @@
     var_dump($_POST);
     if (isset($_POST['rent_id'])) {
         $rent_id = $_POST['rent_id'];
-    
-        // Connect to the database
-        // ...
-    
+    //get tweet data from tweet id
+        $rent     = $getFromR->rentFindByID($rent_id);
+        //create link for tweet image to delete from
+        $imageLink = '../../'.$rent->postImage;
+        $getFromA->delete('rents', array('houseID' => $rent_id));
+    //rentFindByID
         // Prepare and execute the DELETE query
-        $sql = "DELETE FROM rents WHERE houseID = ?";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$rent_id]);
+        //$sql = "DELETE FROM rents WHERE houseID = ?";
+        //$stmt = $pdo->prepare($sql);
+        //$stmt->execute([$rent_id]);
     
         // Check if the query was successful
+        /*
         if ($stmt->rowCount() > 0) {
             echo "Post deleted successfully";
         } else {
@@ -22,32 +25,19 @@
     } else {
         echo "Invalid request";
     }
-     
-
+     */
+        if(!empty($rent->postImage)){
+            //delete the file
+            unlink($imageLink);
+        }
+    }
     
 ?>
 
 <?php
-/*
-    $id = $_GET['id'];
-
-   // Xóa dữ liệu
-    try {
-        $pdo = new PDO($dsn, $user, $password);
-    
-        // Prepare and execute a query
-        $sql = "DELETE FROM rents WHERE houseID = $id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$id]);
-    
-        // Check if the query was successful
-        if ($stmt->rowCount() > 0) {
-            echo "Post deleted successfully";
-        } else {
-            echo "Error deleting post";
-        }
-    } catch (PDOException $e) {
-        echo "Connection error: " . $e->getMessage();
-    }
-*/
+if (isset($_POST['acceptPost'])&&!empty($_POST['acceptPost'])) {
+    $rent_id = $_POST['rent_id'];
+    $status = 'for-rent';
+    $getFromR->update('rents',$rent_id, array('status' => $status));
+}
 ?>

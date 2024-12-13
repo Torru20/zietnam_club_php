@@ -14,7 +14,7 @@ class Rent extends User{
         echo'<div class="row row-cols-1 row-cols-md-3 g-4">';
 	    foreach ($rents as $rent) {
 			$user = $this->userData($rent->houseOf);
-			if($rent->status=='for-rent'){
+			if($rent->status=='for_rent'){
 			echo'
                 <div class="col">
                     <div class="card">
@@ -80,8 +80,8 @@ class Rent extends User{
 					echo "<td><label class='deletePostRent' data-rent='.$rent->houseID.'>Delete</label></td>"; 
 
 				}else{
-					echo "<td><a href='edit.php?id=" .$rent->houseID. "'>Sửa</a></td>";
-                    echo '<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>'; 
+					echo '<td><button class="acceptPostRent" data-rent="'.$rent->houseID.'" type="submit">Accept</button></td>';
+                    echo '<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>';
 
 				}
 				
@@ -115,6 +115,7 @@ class Rent extends User{
 					<th scope="col">Date</th>
 					<th scope="col">Price</th>
 					<th scope="col">Status</th>
+					<th scope="col">Rented</th>
 					<th scope="col">Delete</th>
 					</tr>
 				</thead>
@@ -128,11 +129,12 @@ class Rent extends User{
 						<tr>
 						<th scope="row">'.$rent->houseID.'</th>
 						<td>'.$rent->description.'</td>
-						<td>'.$rent->postImage.'</td>
+						<td><img src="'.BASE_URL.$rent->postImage.'" class="card-img-top" alt="..." style="width: 80px; height: 80px;"></td>
 						<td>'.$rent->postedOn.'</td>
 						<td>'.$rent->price.'</td>
 						<td>'.$rent->status.'</td>
-						<td><button type="button" class="btn btn-outline-primary">Delete</button></td>
+						<td><button class="rentedPostRent" data-rent="'.$rent->houseID.'" type="submit">Rented</button></td>
+						<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>
 						</tr>
 			';
 		}
@@ -146,6 +148,59 @@ class Rent extends User{
 			';
         
     }
+
+	public function rentFindByID($houseID){
+		$stmt = $this->pdo->prepare("SELECT * FROM `rents`WHERE `houseID` = :houseID");
+		$stmt->bindParam(":houseID", $houseID, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetch(PDO::FETCH_OBJ);
+	}
+	public function create($table, $fields = array()){
+		$columns = implode(',', array_keys($fields));
+		$values  = ':'.implode(', :', array_keys($fields));
+		$sql     = "INSERT INTO {$table} ({$columns}) VALUES ({$values})";
+
+		if($stmt = $this->pdo->prepare($sql)){
+			foreach ($fields as $key => $data) {
+				$stmt->bindValue(':'.$key, $data);
+			}
+			$stmt->execute();
+			return $this->pdo->lastInsertId();
+		}
+	}
+
+	public function update($table, $house_id, $fields){
+		$columns = '';
+		$i       = 1;
+
+		foreach ($fields as $name => $value) {
+			$columns .= "`{$name}` = :{$name} ";
+			if($i < count($fields)){
+				$columns .= ', ';
+			}
+			$i++;
+		}
+		$sql = "UPDATE {$table} SET {$columns} WHERE `houseID` = {$house_id}";
+		if($stmt = $this->pdo->prepare($sql)){
+			foreach ($fields as $key => $value) {
+				$stmt->bindValue(':'.$key, $value);
+			}
+			$stmt->execute();
+		}
+	}
+
+	public function delete($table, $array){
+		$sql   = "DELETE FROM " . $table;
+		$where = " WHERE ";
+
+		foreach($array as $key => $value){
+			$sql .= $where . $key . " = '" . $value . "'";
+			$where = " AND ";
+		}
+		$sql .= ";";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->execute();
+	}
 
 }
 ?>

@@ -64,55 +64,15 @@ if ( isset( $_POST['post-rent'] ) ) {
     </h1>
     
 
-
-
-<div class="main">
-            <div class=''>
-
-                <!--Tweet SHOW WRAPPER-->
-                <div class='tweets'>
-                <?php
-                    $getFromR->rentsAdmin();
-                ?>
-                </div>
-                <!--TWEETS SHOW WRAPPER-->
-
-                <div class='loading-div'>
-                    <img id='loader' src='../assets/images/loading.svg' style='display: none;' />
-                </div>
-                <div class='popupTweet'></div>
-                <!--Tweet END WRAPER-->
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/like.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/retweet.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/popuptweets.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/delete.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/delete-rentpost.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/comment.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/popupForm.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/fetch.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/messages.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/notification.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL; ?>../assets/js/postMessage.js'></script>
-
-            </div><!-- in left wrap-->
-        </div><!-- in center end -->
+    <?php
+        $getFromR->rentsAdmin();
+    ?>
 
 
     <script src="../js/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <script>
-  $(document).ready(function() {
-    $(document).on('click', '.deletePostRent', function() {
-      var rent_id = $(this).data('rent');
-      console.log("rent_id:", rent_id);
-
-      $.post('http://localhost/zietnam_club_php/core/ajax/deletePostRent.php', {rent_id}, function(){
-        window.location.href = window.location.href;
-      });
-    });
-  });
-</script>
+    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/delete-rentpost.js'></script>
+   
     
     <script src="../js/dark-mode.js"></script>
             
