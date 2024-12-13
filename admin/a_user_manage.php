@@ -41,70 +41,91 @@ if ( $getFromA->loggedIn() === false ) {
     
         <div class="container text-center">
         <h3>User list</h3>
-        
-            <div class="row align-items-start">
-                <div class="col">
-                <div class="table-responsive">
-                    
-                    <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm">
-                    <?php
-
-                        $getFromA->listUsers();
-                    ?>
-                    <script>
-                    const searchInput = document.getElementById('searchInput');
-const tableBody = document.querySelector('tbody');
-
-searchInput.addEventListener('input', (event) => {
-    const searchTerm = event.target.value.toLowerCase();
-    const rows = tableBody.querySelectorAll('tr');
-
-    rows.forEach(row => {
-        const nameCell = row.querySelector('td:nth-child(2)'); // Giả sử tên người dùng ở cột thứ 2
-        if (nameCell.textContent.toLowerCase().includes(searchTerm)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
-});
-                    </script>
-                </div>
-                </div>
-            </div>
-            <div class="row align-items-start">
-                <div class="col">
-                    <h5>find by</h5>
-                </div>
-            </div>
-
             <div class="row align-items-start">
                 <div class="col">
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">ID</span>
-                        <input type="text" class="form-control" placeholder="id number" aria-label="Visitors" aria-describedby="Visitors number">
+                        <input type="text" id="searchByID" class="form-control" placeholder="id number" aria-label="Visitors" aria-describedby="Visitors number">
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">Name</span>
-                        <input type="text" class="form-control" placeholder="user name" aria-label="Bans" aria-describedby="Bans">
+                        <input type="text" id="searchByName" class="form-control" placeholder="user name" aria-label="Bans" aria-describedby="Bans">
                     </div>
                 </div>
 
             </div>
-
             <div class="row align-items-start">
-
               <div class="input-group flex-nowrap">
                   <span class="input-group-text" id="addon-wrapping">Email</span>
-                  <input type="text" class="form-control" placeholder="user email" aria-label="Bans" aria-describedby="Bans">
+                  <input type="text" id="searchByEmail" class="form-control" placeholder="user email" aria-label="Bans" aria-describedby="Bans">
               </div>
-
-              
-
             </div>
-            <button type="button" class="btn btn-primary">Search</button>
+        
+            <div class="row align-items-start">
+                <div class="col">
+                <div class="table-responsive">
+                    
+                    <?php
+
+                        $getFromA->listUsers();
+                    ?>
+                    <script>
+                    const searchByName = document.getElementById('searchByName');
+                    const tableBody = document.querySelector('tbody');
+
+                    searchByName.addEventListener('input', (event) => {
+                        const searchTerm = event.target.value.toLowerCase();
+                        const rows = tableBody.querySelectorAll('tr');
+
+                        rows.forEach(row => {
+                            const nameCell = row.querySelector('td:nth-child(2)'); // Giả sử tên người dùng ở cột thứ 2
+                            if (nameCell.textContent.toLowerCase().includes(searchTerm)) {
+                                row.style.display = '';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                    });
+
+
+                    const searchbyEmail = document.getElementById('searchByEmail');
+                    searchbyEmail.addEventListener('input', (event) => {
+                        const searchTerm = event.target.value.toLowerCase();
+                        const rows = tableBody.querySelectorAll('tr');
+
+                        rows.forEach(row => {
+                            const nameCell = row.querySelector('td:nth-child(4)'); // Giả sử tên người dùng ở cột thứ 2
+                            if (nameCell.textContent.toLowerCase().includes(searchTerm)) {
+                                row.style.display = '';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                    });
+
+                    const searchbyID = document.getElementById('searchByID');
+                    searchbyID.addEventListener('input', (event) => {
+                        const searchTerm = event.target.value.toLowerCase();
+                        const rows = tableBody.querySelectorAll('tr');
+
+                        rows.forEach(row => {
+                            const nameCell = row.querySelector('th:nth-child(1)'); // Giả sử tên người dùng ở cột thứ 2
+                            if (nameCell.textContent.toLowerCase().includes(searchTerm)) {
+                                row.style.display = '';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        });
+                    });
+
+
+                    </script>
+                </div>
+                </div>
+            </div>
+            
             
         </div>
         
@@ -113,6 +134,7 @@ searchInput.addEventListener('input', (event) => {
     <?php
         include "../components/a_footer.php";
     ?>
+    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/delete-resetPass.js'></script>
 </body>
 </html>
 

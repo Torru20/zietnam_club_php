@@ -185,8 +185,8 @@ class Admin{
 				<td>'.$user->website.'</td>
 				';
 			
-				echo '<td><button class="updateUserProfile" data-rent="'.$user->user_id.'" type="submit">Get</button></td>';
-				echo '<td><button class="deleteUser" data-rent="'.$user->user_id.'" type="submit">Delete</button></td>';
+				echo '<td><button class="resetPass" data-user="'.$user->user_id.'" type="submit">Reset</button></td>';
+				echo '<td><button class="deleteUser" data-user="'.$user->user_id.'" type="submit">Delete</button></td>';
 
 				
 				

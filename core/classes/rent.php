@@ -75,7 +75,7 @@ class Rent extends User{
 				<td>'.$rent->price.'</td>
 				<td>'.$rent->status.'</td>
 				';
-				if ($rent->status=='rented'||$rent->status=='for-rent') {
+				if ($rent->status=='rented'||$rent->status=='for_rent') {
 					echo'<td></td>';
 					echo "<td><label class='deletePostRent' data-rent='.$rent->houseID.'>Delete</label></td>"; 
 
