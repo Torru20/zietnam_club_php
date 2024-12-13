@@ -34,10 +34,3 @@
     
 ?>
 
-<?php
-if (isset($_POST['acceptPost'])&&!empty($_POST['acceptPost'])) {
-    $rent_id = $_POST['rent_id'];
-    $status = 'for-rent';
-    $getFromR->update('rents',$rent_id, array('status' => $status));
-}
-?>

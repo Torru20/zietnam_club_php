@@ -1,3 +1,11 @@
+<?php
+include '../core/init.php';
+
+if ( $getFromA->loggedIn() === false ) {
+    header( 'Location: '.BASE_URL.'index.php' );
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,35 +41,16 @@
     
         <div class="container text-center">
         <h3>User list</h3>
-
+        
             <div class="row align-items-start">
                 <div class="col">
                 <div class="table-responsive">
-                    <table class="table table-hover my-table">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody" class="table-group-divider">
-                            <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                     <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm">
+                    <?php
+
+                        $getFromA->listUsers();
+                    ?>
                     <script>
                     const searchInput = document.getElementById('searchInput');
 const tableBody = document.querySelector('tbody');

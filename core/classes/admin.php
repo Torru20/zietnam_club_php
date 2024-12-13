@@ -147,6 +147,63 @@ class Admin{
 		return (isset($_SESSION['adminID'])) ? true : false;
 	}
 
+	public function listUsers(){
+		if($this->loggedIn() === false) return false;
+		$stmt = $this->pdo->prepare("SELECT * FROM `users`");
+	    
+        $stmt->execute();
+	    $users = $stmt->fetchAll(PDO::FETCH_OBJ);
+        echo'
+		<div class="table-responsive">
+			<table class="table table-hover my-table">
+				<thead>
+					<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Screen Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Profile Image</th>
+					<th scope="col">Bio</th>
+					<th scope="col">Country</th>
+					<th scope="col">Website</th>
+					<th scope="col">Reset Password</th>
+					<th scope="col">Delete</th>
+					</tr>
+				</thead>
+					<tbody id="tableBody" class="table-group-divider">
+		';
+	    foreach ($users as $user) {
+			echo'
+				<tr>
+				<th scope="row">'.$user->user_id.'</th>
+				<td>'.$user->username.'</td>
+				<td>'.$user->screenName.'</td>
+				<td>'.$user->email.'</td>
+				<td><img src="'.BASE_URL.$user->profileImage.'" class="card-img-top" alt="..." style="width: 80px; height: 80px;"></td>
+				<td>'.$user->bio.'</td>
+				<td>'.$user->country.'</td>
+				<td>'.$user->website.'</td>
+				';
+			
+				echo '<td><button class="updateUserProfile" data-rent="'.$user->user_id.'" type="submit">Get</button></td>';
+				echo '<td><button class="deleteUser" data-rent="'.$user->user_id.'" type="submit">Delete</button></td>';
+
+				
+				
+				echo'
+				</tr>
+			';
+		}
+					
+		echo'
+						
+					</tbody>
+				</table>
+			</div>
+			
+		';
+    }
+
 	public function adminIdbyAdminname($adminname){
 		$stmt = $this->pdo->prepare("SELECT `adminID` FROM `admin` WHERE (`adminName`  = :adminname)");
 		$stmt->bindParam("adminName", $adminname, PDO::PARAM_STR);
