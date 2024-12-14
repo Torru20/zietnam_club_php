@@ -124,19 +124,28 @@ class Rent extends User{
 	    foreach ($rents as $rent) {
 			$user = $this->userData($rent->houseOf);
 			echo'
-			
-					
-						<tr>
-						<th scope="row">'.$rent->houseID.'</th>
-						<td>'.$rent->description.'</td>
-						<td><img src="'.BASE_URL.$rent->postImage.'" class="card-img-top" alt="..." style="width: 80px; height: 80px;"></td>
-						<td>'.$rent->postedOn.'</td>
-						<td>'.$rent->price.'</td>
-						<td>'.$rent->status.'</td>
-						<td><button class="rentedPostRent" data-rent="'.$rent->houseID.'" type="submit">Rented</button></td>
-						<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>
-						</tr>
+				<tr>
+				<th scope="row">'.$rent->houseID.'</th>
+				<td>'.$rent->description.'</td>
+				<td><img src="'.BASE_URL.$rent->postImage.'" class="card-img-top" alt="..." style="width: 80px; height: 80px;"></td>
+				<td>'.$rent->postedOn.'</td>
+				<td>'.$rent->price.'</td>
+				<td>'.$rent->status.'</td>
+						
 			';
+			if ($rent->status=='waiting'||$rent->status=='rented') {
+				echo'<td></td>';
+				echo "<td><label class='deletePostRent' data-rent='.$rent->houseID.'>Delete</label></td>"; 
+
+			}else{
+				echo '<td><button class="rentedPostRent" data-rent="'.$rent->houseID.'" type="submit">Rented</button></td>';
+				echo '<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>';
+
+			}
+			
+			echo'
+			</tr>
+		';
 		}
 					
 		echo'
