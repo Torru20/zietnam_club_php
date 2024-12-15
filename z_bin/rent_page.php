@@ -31,6 +31,7 @@ if ( $getFromU->loggedIn() === false ) {
 
     </style>
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
+    
 
     <link rel="stylesheet" href="css/forum_post.css">
     <link rel="stylesheet" href="css/header.css">
@@ -41,7 +42,7 @@ if ( $getFromU->loggedIn() === false ) {
         require "components/nav_bar.php";
     ?>
     <h1 style="margin-top:200px;">
-
+    <?php include "components/chat_user_list.php"; ?>
 
 
 
@@ -59,6 +60,7 @@ if ( $getFromU->loggedIn() === false ) {
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/comment.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popupForm.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/fetch.js'></script>
+    <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages-copy.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/notification.js'></script>
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/postMessage.js'></script>

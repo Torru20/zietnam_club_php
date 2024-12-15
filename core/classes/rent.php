@@ -28,11 +28,12 @@ class Rent extends User{
 							<h3>
 								'.$rent->price.'
 							</h3>
-							<button type="button" class="btn btn-outline-primary">Primary</button>
+						</div>
+						<div data-bs-dismiss="offcanvas" class="people-message" data-user='.$rent->houseOf.'>
+							chat now
 						</div>
 						<div class="card-footer">
 							<small class="text-body-secondary">'.$this->timeAgo($rent->postedOn).'</small>
-							
 						</div>
                 	</div>
             	</div>
