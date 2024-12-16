@@ -1,7 +1,7 @@
 $(function(){
 	$('.search').keyup(function(){
 		var search = $(this).val();
-		$.post('http://localhost/twitter/core/ajax/search.php', {search:search}, function(data){
+		$.post('http://localhost/zietnam_club_php/core/ajax/search.php', {search:search}, function(data){
 			$('.search-result').html(data);
 			if(search == ""){
 				$('.search-result').html("");
