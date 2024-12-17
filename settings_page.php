@@ -1,19 +1,13 @@
 <?php
 include 'core/init.php';
-    $user_id = $_SESSION['user_id'];
-    $user    = $getFromU->userData( $user_id );
-    $username = $user->username;
-  $profileId = $getFromU->userIdByUsername($username);
-  $profileData = $getFromU->userData($profileId);
-  $user_id = @$_SESSION['user_id'];
-  $user = $getFromU->userData($user_id);
-  $notify  = $getFromM->getNotificationCount($user_id);
+$user_id = $_SESSION['user_id'];
+    
 
  if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
   $username = $getFromU->checkInput($_GET['username']);
   $profileId = $getFromU->userIdByUsername($username);
   $profileData = $getFromU->userData($profileId);
-  $user_id = @$_SESSION['user_id'];
+  
   $user = $getFromU->userData($user_id);
   $notify  = $getFromM->getNotificationCount($user_id);
 
@@ -21,6 +15,14 @@ include 'core/init.php';
   if (!$profileData) {
     header('Location: '.BASE_URL.'index.php');
   }
+}else{
+    
+    $user    = $getFromU->userData( $user_id );
+    $username = $user->username;
+  $profileId = $getFromU->userIdByUsername($username);
+  $profileData = $getFromU->userData($profileId);
+  $user = $getFromU->userData($user_id);
+  $notify  = $getFromM->getNotificationCount($user_id);
 }
 
 ?>
@@ -115,7 +117,7 @@ include 'core/init.php';
 
                 <!--Tweet SHOW WRAPPER-->
                 <div class='tweets'>
-                    <?php $getFromT->tweets( $user_id, 100 );
+                    <?php $getFromT->getUserTweets($profileId);
                     ?>
                 </div>
                 <!--TWEETS SHOW WRAPPER-->
@@ -131,7 +133,7 @@ include 'core/init.php';
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/delete.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/comment.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popupForm.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/fetch.js'></script>
+                <!--<script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/fetch.js'></script>-->
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/messages.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/notification.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/postMessage.js'></script>
