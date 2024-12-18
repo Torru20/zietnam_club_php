@@ -1,112 +1,164 @@
+/*
+
+
+đỏ đô:#880d1e
+kem trắng: #E8E5DA
+xanh đen: #011936
+xanh da trời: #669bbc
+xanh xám: #6c6f7d
+
+*/
 @import "../css/pallete.css";
-@font-face {
-    font-family: Pacifico;
-    src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
-}
-.playwrite-vn-font {
-    font-family: "Playwrite VN", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-body{
-    /*background-color: rgba(5, 25, 51);
-    background-image:url(../images/hero.jpg) ;
-    */
-    background-image:url(../images/hero.jpg) ;
-    
-}
-a{
-    cursor: pointer;
-}
-.header-main{
-    width: 100%;
-    height: 60px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-}
-.header-main-logo{
-    width:  fit-content;
-    height: 100%;
+html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: auto;
+    height: auto;
+    /* font-size: 18px; */
+    font-family: "Noto Sans";
+    background: linear-gradient(to right,var(--secondary-color),var(--surface-color));
 
-    display: flex;
-    padding-left: 60px;
-} 
-.header-main-logo img{
-    height: 60px;
-    align-self: center;
-}
-.header-main-nav{
-    height: 100%;
 
-}
-.header-main-nav ul{
-    list-style: none;
-    margin-left: 30px;
-}
-.header-main-nav ul li{
-    display: inline;
-    float: left;
-    
-}
-.header-main-nav ul li a{
-    padding: 0 10px 0 10px;
-    font-family: "Protest Guerrilla", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 60px;
+  }
+  
+  #red-text {
+      color: #669bbc;
+      font-weight: bold;
+      font-size: 120%;
+  }
+  
+  #title-text-separator {
+    width: 5%;
+    margin-top: 1%;
+    border: solid 1px #011936;
+  }
+  
+  .responsive-menu-link {
     color: black;
-    display: block;
-    height: 100%;
-}
-.header-main-nav ul li a:hover{
-    color: rgba(236, 166, 193);
-
-
-}
-.header-main-sm{
-    width: fit-content;
-    height: 100%;
-
-    padding-right: 60px;
+  }
+  
+  
+  /* ----- General Header CSS ------ */
+  
+  #header {
+    position: fixed;
     display: flex;
+    flex-flow: column;
+    justify-content: center;
     align-items: center;
-    column-gap: 10px;
-}
-.header-main-sm-fb{
-    width: 20px;
-    height: 20px;
-    background-image: url(../images/facebook_black.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.header-main-sm-fb:hover{
-    width: 20px;
-    height: 20px;
-    background-image:url(../images/facebook_color.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.header-main-sm-in{
-    width: 40px;
-    height: 20px;
-    background-image:url(../images/xiaohongshu_trans.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.header-main-sm-in:hover{
-    width: 40px;
-    height: 20px;
-    background-image:url(../images/xiaohongshu_red.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#hero-header {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    font-size: 19px;
+    min-height: 100px;
+  }
+  
+  
+  
+  
+  
+  /* Normal Header */
+  
+  .active-header {
+    background-color: #E8E5DA;
+    color: black;
+  }
+  
+  .menu-link {
+    color: #E8E5DA;
+  }
+  
+  .active-menu-links {
+    color: black;
+  }
+  
+  #normal-header {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    font-size: 19px;
+    min-height: 100px;
+  }
+  
+  #header-img {
+    width: 250px;
+    margin-left: 15%;
+  }
+  
+  #nav-bar {
+  }
+  
+  #nav-bar ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+  }
+  
+  #nav-bar li {
+    padding: 10px;
+    margin: 12px;
+  }
+  
+  #nav-bar ul, a {
+    text-decoration: none;
+  }
+  
+  
+  
+  
+  
+  
+  /* Responsive Header */
+  
+  #responsive-header {
+    display: none;
+  }
+  
+  #image-button-black {
+    display: none;
+    border: none;
+  }
+  
+  #image-button-black:hover {
+    cursor: pointer;
+  }
+  
+  #image-button-black:focus {
+    outline: 0;
+  }
+  
+  
+  /* ----- Hero Header CSS -----
+  
+  Tags included:
+  
+  1. hero-header - main container of the Hero
+  
+  2. hero-content - the container of the title and description within the hero Section
+  
+  3. hero-title - the title within the hero section
+  
+  4. hero-text - the text within the hero section
+  
+  5. hero-button - the button within the hero section
+  
+  */
+  
+  #hero-header {
     /* width: 100vw; */
     height: 100vh;
-    box-shadow: 3px 3px 2px #bebebe;
+    box-shadow: 3px 3px 2px var(--secondary-color);
   
     /* hero-header flexbox */
     display: flex;
@@ -115,10 +167,10 @@ a{
   
     /* Texy style */
     text-align: center;
-    color: #E8E5DA;
+    color: var(--primary-color);
   
     /* Background image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(image-dichthuat/hero.jpg) ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(hero.jpg) ;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -127,17 +179,19 @@ a{
   
   #hero-title {
     font-size: 3.5em;
+    color: var(--text);
   }
   
   #hero-text {
     font-size: 1.3em;
     margin-top: 2%;
+    color: var(--text);
   }
   
   #hero-button {
-    border: solid 2px #E8E5DA;
+    border: solid 2px var(--primary-color);
     background-color: inherit;
-    color: #E8E5DA;
+    color: var(--primary-color);
     margin-top: 6%;
     width: 25%;
     height: 55px;
@@ -152,7 +206,7 @@ a{
   #hero-header-kid {
     /* width: 100vw; */
     height: 15vh;
-    box-shadow: 3px 3px 2px #bebebe;
+    box-shadow: 3px 3px 2px var(--surface-color);
   
     /* hero-header flexbox */
     display: flex;
@@ -161,12 +215,147 @@ a{
   
     /* Texy style */
     text-align: center;
-    color: #E8E5DA;
+    color: var(--text);
   
     /* Background image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(image-dichthuat/hero.jpg) ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(hero.jpg) ;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
+  
+  
+  
+  
+  
+  
+  /* ----- Main Content CSS -----
+  
+  Tags included:
+  
+  1. features-container - the main container wrapping the "features" elements
+  
+  2. features-description - container wrapping the title and the description
+  
+  3. features-title - the main title of the Features
+  
+  4. features-separator - the line that separates the title from the Description
+  
+  5. features-text - the main describing the features and services
+  
+  6. service-features - container wrapping all 4 services
+  
+  7. feature - the common id applied to the container of all the 4 services
+  
+  8. feature img - the styling of each image belonging to each feature
+  
+  9. feature-title - the common id applied to the title of each feature
+  
+  10. feature p - the styling of each paragraph belonging to each feature
+  
+  11. feature-button - the common id applied to the button of each feature
+  
+  12. feature-button:hover - the ":hover" styling of each button
+  
+  */
+  
+  #features-container {
+    box-shadow: 2px 2px 15px var(--secondary-color);
+    margin-top: 5%;
+    padding: 2%;
+    background-color: var(--surface-color);
+  }
+  
+  #service-features {
+    display: flex;
+    flex-direction: row;
+    /* Change flow-direction to "column" in the responsive design for the features to stack
+    one on top of another. */
+    justify-content: space-around;
+    margin-top: 2%;
+    padding-bottom: 3%;
+  }
+  
+  #features-description {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    padding: 1%;
+    display: flex;
+    width: 60%;
+    color: var(--text);
+  }
+  
+  #features-description h1 {
+    font-size: 45px;
+    color: var(--text);
+  }
+  
+  
+  #features-description p {
+    padding: 1%;
+    margin-top: 1%;
+    color: var(--text);
+  }
+  
+  #feature {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px var(--surface-color);
+    box-shadow: 1px 2px 15px var(--secondary-color);
+  }
+  
+  #feature i {
+    max-width: 30%;
+    max-height: 30%;
+    padding-top: 5%;
+  }
+  #feature img {
+    max-width: 30%;
+    max-height: 30%;
+    padding-top: 5%;
+  }
+  
+  
+  #feature-title {
+    margin-top: 5%;
+    color: var(--text);
+  }
+  
+  #feature p {
+    width: 70%;
+    margin-top: 5%;
+    color: var(--text);
+  }
+  
+  #feature-button {
+    border: none;
+    margin-top: 30%;
+    width: 12vh;
+    height: 5vh;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 20%;
+
+  }
+  
+  #feature-button:hover {
+    background-color: var(--inverseprimary-color);
+    cursor: pointer;
+  }
+  
+  
+  
+
+  
+  

@@ -31,7 +31,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>twitter</title>
+    <title>Sign Up Step</title>
     <meta charset="UTF-8" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
@@ -65,6 +65,8 @@
             justify-content: center;
             flex-direction: column;
             height: 90vh;
+            width: 50%;
+	        margin: 0px auto;
         }
         .step-container {
             background-color: var(--tertiary-color);
@@ -267,7 +269,7 @@
             Tell us about all the stuff you love and we'll help you get set up.
         </p>
         <span>
-            <a href='../pages/forum_page.php' class='backButton'>Let's go!</a>
+            <a href='../forum_page.php' class='backButton'>Let's go!</a>
         </span>
     </div>
 </div>

@@ -70,7 +70,7 @@ if ( isset( $_POST['tweet'] ) ) {
         <h1></h1>
         <?php
 
-            include "components/post.php";
+            //include "components/post.php";
 
             include "components/floating-button.php";
         ?>

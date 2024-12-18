@@ -15,15 +15,15 @@ surface:  Color(0xFFEEF5FF),
 */
 
 :root{
-    --surface-color: #EEF5FF;
-    --primary-color:#7C93C3;
+    --surface-color: #dae7f9;
+    --primary-color:#7a92c6;
     --secondary-color: #9EB8D9;
     --inverseprimary-color: #A25772;
     --tertiary-color: white;
     --text: black;
 }
 .dark-theme{
-    --surface-color: rgba(5, 25, 51, 1);
+    --surface-color: rgb(10, 36, 69);
     --primary-color:rgba(50, 75, 129, 1);
     --secondary-color: rgba(101, 138, 192, 1);
     --inverseprimary-color: rgba(236, 166, 193, 1);

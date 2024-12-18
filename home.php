@@ -30,16 +30,15 @@ if ( $getFromU->loggedIn() === false ) {
         @import "css/pallete.css";
 
     </style>
-    <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
+    
 
-    <link rel="stylesheet" href="css/forum_post.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav_bar.css">
+    <link rel="stylesheet" href="css/home.css">
   
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
   <title>ZietNam Club – Your Bridge to Vietnam </title>
-  <link rel="stylesheet" href="css/home1.css">
+  
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="js/home.js"></script>
   <script src="https://kit.fontawesome.com/8d9bbedb1f.js" crossorigin="anonymous"></script>
