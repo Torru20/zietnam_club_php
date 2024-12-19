@@ -64,7 +64,6 @@
 <div class="grid-container">
     
 	<div class="main">
-        <p class="page_title mb-0"style="border-bottom:none;"><i class="fa fa-cog mr-4" style="color:#50b7f5;"></i>Settings</p>
         
         <div class="setting-head">
            <div class="account-text">
