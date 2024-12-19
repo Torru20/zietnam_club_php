@@ -101,7 +101,9 @@ if ( $getFromU->loggedIn() === false ) {
     <script src='<?php echo BASE_URL; ?>assets/js/jquery-3.1.1.min.js'></script>
     <script src='<?php echo BASE_URL; ?>assets/js/popper.min.js'></script>
     <script src='<?php echo BASE_URL; ?>assets/js/bootstrap.min.js'></script>
-
+    <?php
+  include 'components/footer.php';
+ ?>
 </body>
 
 </html>

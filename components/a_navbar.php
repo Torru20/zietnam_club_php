@@ -18,9 +18,6 @@
           <a class="nav-link" href="../admin/a_user_manage.php">U S E R _ M A N A G E</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/settings_page.php">S E T T I N G S</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href='../includes/a_logout.php'><i class="fa fa-power-off"></i><span> L O G  O U T</span></a>
         </li>
         

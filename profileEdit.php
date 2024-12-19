@@ -24,7 +24,7 @@
 				$error = "Country name is too long";
 			}else {
 				 $getFromU->update('users', $user_id, array('screenName' => $screenName, 'bio' => $profileBio, 'country' => $country, 'website' => $website));
-				 header('Location:'.BASE_URL.'settings_page.php');
+				 header('Location:'.BASE_URL.'profile_page.php');
 			}
 		}else{
 			$error = "Name field can't be blank";
@@ -150,7 +150,7 @@
                         </div>
                         <div class="edit-button d-flex">
                             <span>
-                                <button class="new-btn mr-3" type="button" onclick="window.location.href='<?php echo BASE_URL; ?>settings_page.php'" value="Cancel" style="outline:none;">Cancel</button>
+                                <button class="new-btn mr-3" type="button" onclick="window.location.href='<?php echo BASE_URL; ?>profile_page.php'" value="Cancel" style="outline:none;">Cancel</button>
                             </span>
                             <span>
                                 <button class="new-btn" type="submit" id="save" value="Save Changes" style="outline:none;">Save</button>

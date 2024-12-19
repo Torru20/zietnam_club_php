@@ -300,7 +300,9 @@
                 </div><!-- in left wrap-->
 <!--            </div> in center end -->
 <!--        </div>-->
-
+<?php
+  include 'components/footer.php';
+ ?>
         <script type='<?php echo BASE_URL;?>text/javascript' src='assets/js/search.js'></script>
         <script type='<?php echo BASE_URL;?>text/javascript' src='assets/js/hashtag.js'></script>
 

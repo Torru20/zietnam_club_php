@@ -10,11 +10,42 @@ body{
     background: var(--tertiary-color);
 	width: auto;
     height: auto;
-    margin: 30px;
+    padding: 30px;
     padding-top: 30px;
     /* font-size: 18px; */
     font-family: "Noto Sans";
     overflow: auto;
+}
+h1{
+    color: var(--inverseprimary-color);
+    font-family: "Playwrite VN", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+}
+
+.input-group>.form-control{
+    background-color: var(--tertiary-color);
+}
+.align-items-start{
+    padding-bottom: 30px;
+}
+#addon-wrapping{
+color: var(--text);
+background-color: var(--secondary-color);
+}
+.form-control:disabled{
+    color: var(--text);
+    background-color: var(--surface-color);
+}
+.form-control::placeholder{
+    color: var(--text);
+}
+h3{
+  padding-top:50px;
 }
 
 
@@ -24,7 +55,6 @@ body{
     background-color: var(--surface-color);
     position: relative;
     z-index: 999;
-    margin: 20px;
 
 }
 

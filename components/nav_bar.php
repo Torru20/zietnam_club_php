@@ -29,15 +29,26 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="forum_page.php">F O R U M</a></li>
-            <li><a class="dropdown-item" href="chat_page_test.php">C H A T C H I T</a></li>
+            <li><a class="dropdown-item" href="chat_page.php">C H A T C H I T<span id='messages'>
+                            <?php if ( $notify->totalM > 0 ) {
+                            echo '<span class="span-i">'.$notify->totalM.'</span>';
+                            }?>
+                        </span></a></li>
+            
             <li><a class="dropdown-item" href="explore_friend.php">E X P L O R E</a></li>
             
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Do you need some help?</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>settings_page.php">S E T T I N G S</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              M O R E
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>profile_page.php">P R O F I L E</a></li>
+            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>account.php">S E T T I N G S</a></li>
+          </ul>
         </li>
         
         <li class="nav-item">

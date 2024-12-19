@@ -140,9 +140,10 @@ $user_id = $_SESSION['user_id'];
             </div><!-- in left wrap-->
         </div><!-- in center end -->
 
-
+        <?php
+  include 'components/footer.php';
+ ?>
     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/search.js'></script>
-    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/hashtag.js'></script>
 
     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/follow.js'></script>
 

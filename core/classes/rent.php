@@ -78,7 +78,7 @@ class Rent extends User{
 				';
 				if ($rent->status=='rented'||$rent->status=='for_rent') {
 					echo'<td></td>';
-					echo "<td><label class='deletePostRent' data-rent='.$rent->houseID.'>Delete</label></td>"; 
+					echo '<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>';
 
 				}else{
 					echo '<td><button class="acceptPostRent" data-rent="'.$rent->houseID.'" type="submit">Accept</button></td>';
@@ -136,7 +136,7 @@ class Rent extends User{
 			';
 			if ($rent->status=='waiting'||$rent->status=='rented') {
 				echo'<td></td>';
-				echo "<td><label class='deletePostRent' data-rent='.$rent->houseID.'>Delete</label></td>"; 
+				echo '<td><button class="deletePostRent" data-rent="'.$rent->houseID.'" type="submit">Delete</button></td>';
 
 			}else{
 				echo '<td><button class="rentedPostRent" data-rent="'.$rent->houseID.'" type="submit">Rented</button></td>';
