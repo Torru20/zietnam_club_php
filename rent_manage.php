@@ -55,7 +55,7 @@ if ( isset( $_POST['post-rent'] ) ) {
     </style>
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
 
-    <link rel="stylesheet" href="css/forum_post.css">
+    <link rel="stylesheet" href="css/table-style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav_bar.css">
     <style>
@@ -89,9 +89,7 @@ if ( isset( $_POST['post-rent'] ) ) {
     <?php
         require "components/nav_bar.php";
     ?>
-    <h1 style="margin-top:200px;">
-
-    </h1>
+    <h1>Management rent posted</h1>
     <?php 
         $getFromR->rentsByID($user_id);
     ?>

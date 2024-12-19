@@ -1,12 +1,11 @@
 <style>
     #popup {
         background-color: var(--tertiary-color);
-        padding: 40px;
-        margin-top: 100px;
-        width: 60%;
+
+        width: 70%;
         border-radius: 30px;
         position: fixed;
-        z-index: 999;
+        z-index: 1000;
         box-shadow: 0 5px 15px var(--secondary-color);
         align-items: center;
         justify-content: space-between;
@@ -14,6 +13,10 @@
         height: fit-content;
         overflow-y: auto;
         
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
     
     }
     #popup h1{
