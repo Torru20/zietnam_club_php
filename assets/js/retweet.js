@@ -7,7 +7,7 @@ $(function(){
 	    $button         = $(this);
 
 
-		$.post('http://localhost/twitter/core/ajax/retweet.php', {showPopup:tweet_id,user_id:user_id}, function(data){
+		$.post('http://localhost/zietnam_club_php/core/ajax/retweet.php', {showPopup:tweet_id,user_id:user_id}, function(data){
 			$('.popupTweet').html(data);
 			$('.close-retweet-popup').click(function(){
 				$('.retweet-popup').hide();
@@ -21,7 +21,7 @@ $(function(){
 	    var comment    = $('.retweetMsg').val();
 
 
-	    $.post('http://localhost/twitter/core/ajax/retweet.php', {retweet:tweet_id,user_id:user_id,comment:comment}, function(){
+	    $.post('http://localhost/zietnam_club_php/core/ajax/retweet.php', {retweet:tweet_id,user_id:user_id,comment:comment}, function(){
 	    	$('.retweet-popup').hide();
 	    	$count++;
 	    	$counter.text($count);

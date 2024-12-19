@@ -1,5 +1,5 @@
 notification = function(){
-	$.get('http://localhost/twitter/core/ajax/notification.php', {showNotification:true}, function(data){
+	$.get('http://localhost/zietnam_club_php/core/ajax/notification.php', {showNotification:true}, function(data){
 		if(data){
 			if(data.notification > 0){
 				$('#notification').addClass('span-i');

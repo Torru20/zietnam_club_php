@@ -11,7 +11,7 @@ $(function(){
 
       $.ajax({
         type: "POST",
-        url: "http://localhost/twitter/core/ajax/home.php",
+        url: "http://localhost/zietnam_club_php/core/ajax/home.php",
         data: dataString,
         cache: false,
         success: function(data){

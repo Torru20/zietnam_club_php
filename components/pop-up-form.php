@@ -113,9 +113,6 @@
                 <ul>
                     <input type='file' name='file' id='file' />
                     <li><label for='file'><i class='fa fa-image' aria-hidden='true'></i></label>
-                        <i class="fa fa-bar-chart"></i>
-                        <i class="fa fa-smile-o"></i>
-                        <i class="fa fa-calendar-o"></i>
                     </li>
                     <span class='tweet-error'><?php if ( isset( $error ) ) {
                         echo $error;

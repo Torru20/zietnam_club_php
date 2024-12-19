@@ -5,7 +5,7 @@ $(function(){
     $button = $(this);
 
     if ($button.hasClass('following-btn')) {
-      $.post('http://localhost/twitter/core/ajax/follow.php', {unfollow:followID, profile:profile}, function(data){
+      $.post('http://localhost/zietnam_club_php/core/ajax/follow.php', {unfollow:followID, profile:profile}, function(data){
         data = JSON.parse(data);
         $button.removeClass('following-btn');
         $button.removeClass('unfollow-btn');
@@ -14,7 +14,7 @@ $(function(){
         $('.count-followers').text(data.followers);
       });
     }else{
-      $.post('http://localhost/twitter/core/ajax/follow.php', {follow:followID, profile:profile}, function(data){
+      $.post('http://localhost/zietnam_club_php/core/ajax/follow.php', {follow:followID, profile:profile}, function(data){
         data = JSON.parse(data);
         $button.removeClass('follow-btn');
         $button.addClass('following-btn');
