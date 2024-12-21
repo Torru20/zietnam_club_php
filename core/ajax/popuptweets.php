@@ -61,7 +61,7 @@
 				<div class="tweet-show-popup-retweet-left">
 					<div class="tweet-retweet-count-wrap">
 						<div class="tweet-retweet-count-head">
-							RETWEET
+							REPOST
 						</div>
 						<div class="tweet-retweet-count-body">
 							<?php echo $tweet->retweetCount;?>
@@ -96,7 +96,7 @@
 							<li>
 								<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
 								<ul> 
-								  <li><label class="deleteTweet" data-tweet="'.$tweet->tweetID.'">Delete Tweet</label></li>
+								  <li><label class="deleteTweet" data-tweet="'.$tweet->tweetID.'">Delete Post</label></li>
 								</ul>
 							</li>' : '').'
 						' : '
@@ -129,7 +129,7 @@
 		 		</ul>
 		 	</div>
 		 	<div class="t-fo-right">
- 		 		<input type="submit" id="postComment" value="Tweet">
+ 		 		<input type="submit" id="postComment" value="OK">
  		 		<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/comment.js"></script>
  		 		<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/follow.js"></script>
   		 	</div>
@@ -169,7 +169,7 @@
 											'<li>
 												<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
 												<ul> 
-												  <li><label class="deleteComment" data-tweet="'.$tweet->tweetID.'" data-comment="'.$comment->commentID.'">Delete Tweet</label></li>
+												  <li><label class="deleteComment" data-tweet="'.$tweet->tweetID.'" data-comment="'.$comment->commentID.'">Delete Post</label></li>
 												</ul>
 											</li>' : '').'
 										</ul>

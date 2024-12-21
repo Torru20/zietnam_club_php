@@ -114,7 +114,7 @@ if ( $getFromU->loggedIn() === false ) {
 
           <p> Chat directly with new friends.</p>
 
-          <a href="chat_page_test.php"><button id="feature-button"> Chat </button></a>
+          <a href="chat_page.php"><button id="feature-button"> Chat </button></a>
         </div>
 
         <div id="feature">
@@ -123,7 +123,7 @@ if ( $getFromU->loggedIn() === false ) {
           <h2 id="feature-title"> So... </h2>
 
           <p> Find a travel companion to explore Vietnam.</p>
-          <a href="forum_page.php"><button id="feature-button"> Find </button></a>
+          <a href="explore_friend.php"><button id="feature-button"> Find </button></a>
         </div>
 
       </div>

@@ -39,7 +39,7 @@
 											'<li>
 												<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
 												<ul> 
-												  <li><label class="deleteComment" data-tweet="'.$tweet->tweetID.'" data-comment="'.$comment->commentID.'">Delete Tweet</label></li>
+												  <li><label class="deleteComment" data-tweet="'.$tweet->tweetID.'" data-comment="'.$comment->commentID.'">Delete Post</label></li>
 												</ul>
 											</li>' : '').'
 										</ul>

@@ -38,7 +38,22 @@ if ( $getFromU->loggedIn() === false ) {
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav_bar.css">
 
-
+<style>
+    .grid-container{
+        padding: 30px;
+        margin-top: 30px;
+        
+    }
+    .search-result{
+        margin-top: 30px;margin-bottom: 40px;
+    }
+    .nav-right-down-wrap{
+        margin-top: 90px;
+    }
+    .trends_show-more{
+        margin-top: 30px;
+    }
+</style>
 </head>
 
 <body>
@@ -47,7 +62,16 @@ if ( $getFromU->loggedIn() === false ) {
         <!--    <div class='wrapper'>-->
 
         <?php require "components/nav_bar.php"; ?>
-
+        <div class="search-container">
+        <a href="" class="search-btn">
+            <i class="fa fa-search"></i>
+        </a>
+        <input type="text" name="search" placeholder="search" class="search-input search" autocomplete="off">
+        </div>
+        <div class='search-result'>
+        </div>
+                
+        <?php $getFromF->whoToFollow( $user_id, $user_id );?>
         <div class="main">
             
                         
@@ -80,16 +104,7 @@ if ( $getFromU->loggedIn() === false ) {
 
     
 
-    <div class="search-container">
-                <a href="" class="search-btn">
-                    <i class="fa fa-search"></i>
-                </a>
-                <input type="text" name="search" placeholder="search" class="search-input search" autocomplete="off">
-            </div>
-            <div class='search-result'>
-            </div>
-            
-            <?php $getFromF->whoToFollow( $user_id, $user_id );?>
+    
 
     <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/follow.js'></script>
     <script src="js/header.js"></script>
