@@ -8,7 +8,7 @@ class Tweet extends User{
 		$this->message  = new Message($this->pdo);
 	}
  
-	public function tweets($user_id, $num){
+	public function posts($user_id, $num){
 	    $stmt = $this->pdo->prepare("SELECT * FROM `tweets` LEFT JOIN `users` ON `tweetBy` = `user_id` WHERE `tweetBy` = :user_id AND `retweetID` = '0' OR `tweetBy` = `user_id` AND `retweetBy` != :user_id AND `tweetBy` IN (SELECT `receiver` FROM `follow` WHERE `sender` =:user_id) ORDER BY `tweetID` DESC LIMIT :num");
 	    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
 	    $stmt->bindParam(":num", $num, PDO::PARAM_INT);
@@ -37,7 +37,7 @@ class Tweet extends User{
 			        	</div>
 			        	<div class="t-s-head-content">
 			        		<div class="t-h-c-name">
-			        			<span><a href="'.BASE_URL.$user->username.'">'.$user->screenName.'</a></span>
+			        			<span><a href="'.BASE_URL.'profile_page.php?username='.$tweet->username.'">'.$user->screenName.'</a></span>
 			        			<span>@'.$user->username.'</span>
 			        			<span>'.$this->timeAgo($tweet->postedOn).'</span>
 
@@ -56,7 +56,7 @@ class Tweet extends User{
 			        			</div>' : '').'
 			        			<div>
 			        				<div class="t-h-c-name">
-			        					<span><a href="'.BASE_URL.$tweet->username.'">'.$tweet->screenName.'</a></span>
+			        					<span><a href="'.BASE_URL.'profile_page.php?username='.$tweet->username.'">'.$tweet->screenName.'</a></span>
 			        					<span>@'.$tweet->username.'</span>
 			        					<span>'.$this->timeAgo($tweet->postedOn).'</span>
 			        				</div>
@@ -76,7 +76,7 @@ class Tweet extends User{
 			      			</div>
 			      			<div class="t-s-head-content ">
 			      				<div class="t-h-c-name media-body">
-			      					<span><a href="'.$tweet->username.'">'.$tweet->screenName.'</a></span>
+			      					<span><a href="'.BASE_URL.'profile_page.php?username='.$tweet->username.'">'.$tweet->screenName.'</a></span>
 			      					<span>@'.$tweet->username.'</span>
 			      					<span>'.$this->timeAgo($tweet->postedOn).'</span>
 			      				</div>
@@ -160,7 +160,7 @@ class Tweet extends User{
 			        	</div>
 			        	<div class="t-s-head-content">
 			        		<div class="t-h-c-name">
-			        			<span><a href="'.BASE_URL.$user->username.'">'.$user->screenName.'</a></span>
+			        			<span><a href="'.BASE_URL.'profile_page.php?username='.$tweet->username.'"</a></span>
 			        			<span>@'.$user->username.'</span>
 			        			<span>'.$this->timeAgo($tweet->postedOn).'</span>
 
@@ -282,33 +282,12 @@ class Tweet extends User{
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
-	
-	public function getTrendByHash($hashtag){
-		$stmt = $this->pdo->prepare("SELECT * FROM `trends` WHERE `hashtag` LIKE :hashtag LIMIT 5");
-		$stmt->bindValue(":hashtag", $hashtag.'%');
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_OBJ);
-	}
 
 	public function getMension($mension){
 		$stmt = $this->pdo->prepare("SELECT `user_id`,`username`,`screenName`,`profileImage` FROM `users` WHERE `username` LIKE :mension OR `screenName` LIKE :mension LIMIT 5");
 		$stmt->bindValue("mension", $mension.'%');
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_OBJ);
-
-	}
-
-	public function addTrend($hashtag){
-		preg_match_all("/#+([a-zA-Z0-9_]+)/i", $hashtag, $matches);
-		if($matches){
-			$result = array_values($matches[1]);
-		}
-		$sql = "INSERT INTO `trends` (`hashtag`, `createdOn`) VALUES (:hashtag, CURRENT_TIMESTAMP)";
-		foreach ($result as $trend) {
-			if($stmt = $this->pdo->prepare($sql)){
-				$stmt->execute(array(':hashtag' => $trend));
-			}
-		}
 	}
 
 	public function addMention($status,$user_id, $tweet_id){
@@ -427,18 +406,6 @@ class Tweet extends User{
                 </div></div></div>';		
 	} 
 
-	public function getTweetsByHash($hashtag){
-		$stmt = $this->pdo->prepare("SELECT * FROM `tweets` LEFT JOIN `users` ON `tweetBy` = `user_id` WHERE `status` LIKE :hashtag OR `retweetMsg` LIKE :hashtag");
-		$stmt->bindValue(":hashtag", '%#'.$hashtag.'%', PDO::PARAM_STR);
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_OBJ);
-	}
-
-	public function getUsersByHash($hashtag){
-		$stmt = $this->pdo->prepare("SELECT DISTINCT * FROM `tweets` INNER JOIN `users` ON `tweetBy` = `user_id` WHERE `status` LIKE :hashtag OR `retweetMsg` LIKE :hashtag GROUP BY `user_id`");
-		$stmt->bindValue(":hashtag", '%#'.$hashtag.'%', PDO::PARAM_STR);
-		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_OBJ);
-	}
+	
 }
 ?>

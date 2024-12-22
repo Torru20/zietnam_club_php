@@ -12,16 +12,3 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
     <link rel="stylesheet" href="css/nav_bar.css">
-    
-    
-    
-    
-  
-
-<!-- 
-them rieng 
-
-
-<title>My forum</title>
-
--->

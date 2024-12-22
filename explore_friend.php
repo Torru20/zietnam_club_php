@@ -50,6 +50,9 @@ if ( $getFromU->loggedIn() === false ) {
     .nav-right-down-wrap{
         margin-top: 90px;
     }
+    .media-inner{
+        margin:10px;
+    }
     .trends_show-more{
         margin-top: 30px;
     }
