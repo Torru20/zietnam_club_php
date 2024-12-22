@@ -151,7 +151,8 @@
 				    </div>
 					<div class="media-inner">
 						<div class="fo-co-head media-body">
-							<a href="'.BASE_URL.$user->username.'">'.$user->screenName.'</a><br><span>@'.$user->username.'</span>
+						
+							<a href="'.BASE_URL.'profile_page.php?username='.$user->username.'">'.$user->screenName.'</a><br><span>@'.$user->username.'</span>
 						</div>
 						<!-- FOLLOW BUTTON -->
 						'.$this->followBtn($user->user_id, $user_id, $profileID).'

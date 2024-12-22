@@ -199,7 +199,7 @@ class Tweet extends User{
 			      			</div>
 			      			<div class="t-s-head-content ">
 			      				<div class="t-h-c-name media-body">
-			      					<span><a href="'.$tweet->username.'">'.$tweet->screenName.'</a></span>
+			      					<span><a href="'.BASE_URL.'profile_page.php?username='.$tweet->username.'">'.$tweet->screenName.'</a></span>
 			      					<span>@'.$tweet->username.'</span>
 			      					<span>'.$this->timeAgo($tweet->postedOn).'</span>
 			      				</div>
@@ -313,10 +313,10 @@ class Tweet extends User{
 		$tweet = preg_replace("/(https?:\/\/)([\w]+.)([\w\.]+)/", "<a href='$0' target='_blink'>$0</a>", $tweet);
         
         //$tweet = preg_replace("/#([\w]+)/", "<a href='http://localhost/twitter/hashtag/$1'>$0</a>", $tweet);		
+        //"'.BASE_URL.'profile_page.php?username='.$tweet->username.'"
+		$tweet = preg_replace("/#([\w]+)/", "<a href='http://localhost/zietnam_club_php/$1'>$0</a>", $tweet);	
         
-		$tweet = preg_replace("/#([\w]+)/", "<a href='http://localhost/twitter/$1'>$0</a>", $tweet);	
-        
-		$tweet = preg_replace("/@([\w]+)/", "<a href='http://localhost/twitter/$1'>$0</a>", $tweet);
+		$tweet = preg_replace("/@([\w]+)/", "<a href='http://localhost/zietnam_club_php/profile_page.php?username=$1'>$0</a>", $tweet);
 		return $tweet;		
 	}
 

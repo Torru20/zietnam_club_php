@@ -52,19 +52,12 @@
 <html>
 
 <head>
-    <title>Edit Profile - Twitter</title>
-    <meta charset="UTF-8" />
-    
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/bird.svg">
-    
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
-    <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/font-awesome.css' />
-    <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/bootstrap.css' />
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style-complete.css" />
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css" />
+    <title>Edit Profile</title>
+    <?php
+        require "template/head.php";
+    ?>
     <link rel="stylesheet" href="css/forum_post.css">
-    <script src="<?php echo BASE_URL; ?>assets/js/jquery-3.1.1.min.js"></script>
-    	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -214,30 +207,11 @@
 
         <div class="popupTweet"></div>
 
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/search.js'></script>
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/hashtag.js'></script>
 
-
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/follow.js'></script>
-
-        <script src='<?php echo BASE_URL;?>assets/js/jquery-3.1.1.min.js'></script>
-        <script src='<?php echo BASE_URL;?>assets/js/popper.min.js'></script>
-        <script src='<?php echo BASE_URL;?>assets/js/bootstrap.min.js'></script>
-
-        <!-- SCRIPTS -->
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/comment.js'></script>
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/fetch.js'></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/popuptweets.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/delete.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/popupForm.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/retweet.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/like.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/hashtag.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/search.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/follow.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/messages.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/notification.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/postMessage.js"></script>
+        <?php
+            require 'components/footer.php';
+            require 'template/footer.php';
+        ?>
 
 
 </body>
