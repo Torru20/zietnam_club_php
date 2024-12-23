@@ -126,7 +126,7 @@
                                                 <span><?php echo $getFromU->timeAgo($data->postedOn);?></span>
                                             </div>
                                             <div class="noti-footer-inner-right-text">
-                                                <?php echo $getFromT->getTweetlinks($data->status);?>
+                                                <?php echo $getFromT->getPostlinks($data->status);?>
                                             </div>
                                         </div>
                                         <?php if(!empty($data->tweetImage)) :?>
@@ -169,7 +169,7 @@
                                                     <span><?php echo $getFromU->timeAgo($data->postedOn);?></span>
                                                 </div>
                                                 <div class="noti-footer-inner-right-text">
-                                                    <?php echo $getFromT->getTweetLinks($data->status)?>
+                                                    <?php echo $getFromT->getPostLinks($data->status)?>
                                                 </div>
                                             </div>
 
@@ -210,7 +210,7 @@
 											<span>'.$getFromT->timeAgo($tweet->postedOn).'</span>
 										</div>
 										<div class="t-h-c-dis">
-											'.$getFromT->getTweetLinks($tweet->status).'
+											'.$getFromT->getPostLinks($tweet->status).'
 										</div>
 									</div>
 								</div>'.
