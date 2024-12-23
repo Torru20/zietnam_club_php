@@ -23,27 +23,32 @@ $user_id = $_SESSION['user_id'];
 
 <head>
     <title>People followed by <?php echo $profileData->screenName. ' (@'.$profileData->username.')';?></title>
-    <meta charset="UTF-8" />
+    <?php
+      require "template/head.php";
+    ?>
     
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL; ?>assets/images/bird.svg">
-    
-    		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
+    <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
+    <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style.css' />
+    <link rel="stylesheet" href="css/forum_post.css">
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/font-awesome.css' />
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/bootstrap.css' />
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style-complete.css" />
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css" />
+    <link rel="stylesheet" href="css/nav_bar.css">
     <script src="<?php echo BASE_URL; ?>assets/js/jquery-3.1.1.min.js"></script>
-    		<script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <?php
+      require "components/nav_bar.php";
+    ?>
     <div class="grid-container">
 
         <div class="main">
             <div class=''>
                 <div class=''>
-                    <!--TWEET WRAPPER-->
-                    <p class="page_title mb-0"><i class="fa fa-arrow-left mr-4" style="color:#50b7f5;"></i><?php echo $profileData->username; ?></p>
+                    
                     <div class='profile-box'>
                         <div class='profile-cover mt-0'>
                             <!-- PROFILE-IMAGE -->
@@ -80,15 +85,15 @@ $user_id = $_SESSION['user_id'];
                                 <div class="profile-follow mt-2 d-flex">
                                     <h6 class="mr-3 ml-1" style="font-weight: 700;"><?php echo $profileData->following; ?>
                                         <a href="<?php echo BASE_URL.$profileData->username; ?>/following">
-                                            <a href="<?php echo BASE_URL.$profileData->username; ?>/following" style="color:rgb(91, 112, 131);">Following</a>
+                                            <a href="<?php echo BASE_URL; ?>following.php?username=<?php echo $username?>" style="color:var(--text);">Following</a>
                                         </a></h6>
                                     <h6 class="mr-3" style="font-weight: 700;"><?php echo $profileData->followers; ?>
-                                        <a href="<?php echo BASE_URL.$profileData->username; ?>/followers" style="color:rgb(91, 112, 131);">
+                                        <a href="<?php echo BASE_URL; ?>followers.php?username=<?php echo $username?>" style="color:var(--text);">
                                             Followers
                                         </a></h6>
                                     <h6 style="font-weight: 700;">
                                         <?php echo $getFromT->countTweets($profileId); ?>
-                                        <a style="color:rgb(91, 112, 131);">Tweets</a></h6>
+                                        <a style="color:rgb(91, 112, 131);">Posts</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -103,30 +108,16 @@ $user_id = $_SESSION['user_id'];
 
                     <div class="popupTweet"></div>
                    
-                    <!--Tweet END WRAPER-->
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/like.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/retweet.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popuptweets.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/delete.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/comment.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popupForm.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/fetch.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/messages.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/notification.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/postMessage.js'></script>
+                    
 
                 </div><!-- in left wrap-->
             </div><!-- in center end -->
         </div>
 
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/search.js'></script>
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/hashtag.js'></script>
-
-        <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/follow.js'></script>
-
-        <script src='<?php echo BASE_URL;?>assets/js/jquery-3.1.1.min.js'></script>
-        <script src='<?php echo BASE_URL;?>assets/js/popper.min.js'></script>
-        <script src='<?php echo BASE_URL;?>assets/js/bootstrap.min.js'></script>
+        <?php
+            require 'components/footer.php';
+            require "template/footer.php";
+        ?>
 
     </div>
 </body>

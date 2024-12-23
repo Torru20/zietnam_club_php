@@ -38,7 +38,7 @@ $user_id = $_SESSION['user_id'];
     
     <link rel="shortcut icon" type="image/x-icon" href="./assets/images/bird.svg">
     
-      	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/>
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style-complete.css' />
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>assets/css/style.css' />
     <link rel="stylesheet" href="css/forum_post.css">
@@ -83,7 +83,7 @@ $user_id = $_SESSION['user_id'];
                                 <h6 class="mt-0" style="color:rgb(91, 112, 131);"><?php echo '@' . $profileData->username; ?></h6>
                             </div>
                             <div class="profile-bio">
-                                <h5><?php echo $getFromT->getTweetLinks($profileData->bio); ?></h5>
+                                <h5><?php echo $getFromT->getPostLinks($profileData->bio); ?></h5>
                             </div>
                             <div class="profile-link d-flex mt-3">
                                 <?php if(!empty($profileData->website)){ ?>
@@ -127,8 +127,8 @@ $user_id = $_SESSION['user_id'];
                 <div class='popupTweet'></div>
                 <!--Tweet END WRAPER-->
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/like.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/retweet.js'></script>
-                <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popuptweets.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/repost.js'></script>
+                <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popupposts.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/delete.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/comment.js'></script>
                 <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popupForm.js'></script>
@@ -140,9 +140,9 @@ $user_id = $_SESSION['user_id'];
             </div><!-- in left wrap-->
         </div><!-- in center end -->
 
-        <?php
-  include 'components/footer.php';
- ?>
+    <?php
+    include 'components/footer.php';
+    ?>
     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/search.js'></script>
 
     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/follow.js'></script>

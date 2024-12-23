@@ -1,6 +1,6 @@
 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/like.js'></script>
-<script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/retweet.js'></script>
-<script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popuptweets.js'></script>
+<script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/repost.js'></script>
+<script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popupposts.js'></script>
 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/delete.js'></script>
 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/comment.js'></script>
 <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/popupForm.js'></script>

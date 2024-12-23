@@ -47,7 +47,7 @@
 		</div>
 		<div class="tweet-show-popup-tweet-wrap">
 			<div class="tweet-show-popup-tweet">
-				<?php echo $getFromT->getTweetLinks($tweet->status);?>
+				<?php echo $getFromT->getPostLinks($tweet->status);?>
 			</div>
 			<div class="tweet-show-popup-tweet-ifram mb-0">
 			<?php 

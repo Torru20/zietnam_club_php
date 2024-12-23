@@ -95,10 +95,6 @@
 <div id="popup" style="display: none;">
     <h1>Say sth to everyone</h1>
     <form method="post" enctype='multipart/form-data'>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="write here...">
-            <label for="floatingInput">Topic</label>
-        </div>
         <div class="form-floating">
             <textarea class="form-control" name='status' placeholder="sayyyy" id="floatingTextarea2" style="height: 100px"></textarea>
             <label for="floatingTextarea2">Write everything u want, bae...</label>
