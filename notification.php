@@ -84,7 +84,7 @@
 
                                     </div>
                                     <div class="notification-tweet">
-                                        <a href="<?php echo BASE_URL.$data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> Followed you - <span><?php echo $getFromU->timeAgo($data->time);?></span>
+                                        <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> Followed you - <span><?php echo $getFromU->timeAgo($data->time);?></span>
 
                                     </div>
 
@@ -115,13 +115,14 @@
                                     </div>
                                 </div>
                                 <div class="notification-tweet">
-                                    <a href="<?php echo BASE_URL.$data->profileImage;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> liked your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
+                                    <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> liked your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
                                 </div>
                                 <div class="notification-footer">
                                     <div class="noti-footer-inner">
                                         <div class="noti-footer-inner-left">
                                             <div class="t-h-c-name">
-                                                <span><a href="<?php echo BASE_URL.$user->username;?>"><?php echo $user->username;?></a></span>
+                                                
+                                                <span><a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $user->username;?>"><?php echo $user->username;?></a></span>
                                                 <span>@<?php echo $user->username;?></span>
                                                 <span><?php echo $getFromU->timeAgo($data->postedOn);?></span>
                                             </div>
@@ -157,14 +158,14 @@
                                         </span>
                                     </div>
                                     <div class="notification-tweet">
-                                        <a href="<?php echo BASE_URL.$data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> retweet your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
+                                        <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> retweet your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
                                     </div>
                                     <div class="notification-footer">
                                         <div class="noti-footer-inner">
 
                                             <div class="noti-footer-inner-left">
                                                 <div class="t-h-c-name">
-                                                    <span><a href="<?php echo BASE_URL.$user->username;?>"><?php echo $user->screenName;?></a></span>
+                                                    <span><a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $user->username;?>"><?php echo $user->screenName;?></a></span>
                                                     <span>@<?php echo $user->username;?></span>
                                                     <span><?php echo $getFromU->timeAgo($data->postedOn);?></span>
                                                 </div>
@@ -205,7 +206,7 @@
 									</div>
 									<div class="t-s-head-co	ntent">
 										<div class="t-h-c-name">
-											<span><a href="'.BASE_URL.$tweet->username.'">'.$tweet->screenName.'</a></span>
+											<span><a href="'.BASE_URL.'profile_page.php?username='.$user->username.'">'.$tweet->screenName.'</a></span>
 											<span>Mentioned you - </span>
 											<span>'.$getFromT->timeAgo($tweet->postedOn).'</span>
 										</div>
