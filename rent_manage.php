@@ -24,7 +24,7 @@ if ( isset( $_POST['post-rent'] ) ) {
         }
         $post_id = $getFromU->create( 'rents', array( 'description' => $description, 'houseOf' => $user_id, 'postImage' => $postImage, 'postedOn' => date( 'Y-m-d H:i:s' ) ,'price' => $price,'status' => $status) );
         
-        header( 'Location: test.php' );
+        header( 'Location: rent_manage.php' );
     } else {
         $error = 'Type description, set price or choose image to post';
     }

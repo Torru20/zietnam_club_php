@@ -24,6 +24,23 @@ if ( $getFromU->loggedIn() === false ) {
 
 </head>
 <body>
+<div class="main">
+            <div class=''>
+
+                
+                <!--TWEETS SHOW WRAPPER-->
+
+                <div class='loading-div'>
+                    <img id='loader' src='assets/images/loading.svg' style='display: none;' />
+                </div>
+                <div class='popupTweet'></div>
+                <!--Tweet END WRAPER-->
+
+                <script type='text/javascript' src='<?php echo BASE_URL; ?>assets/js/messages-copy.js'></script>
+                
+
+            </div><!-- in left wrap-->
+        </div>
     <?php
         require "components/nav_bar.php";
         require "components/chat_user_list.php";

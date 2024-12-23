@@ -160,7 +160,7 @@
 									 	</div>
 									 </div>
 									 <div class="tweet-show-popup-comment-right-tweet">
-									 		<p><a href="'.BASE_URL.'profile_page.php?username='.$comment->username.'">@'.$tweet->username.'</a> '.$comment->comment.'</p>
+									 		<p><a href="'.BASE_URL.'profile_page.php?username='.$tweet->username.'">@'.$tweet->username.'</a> '.$comment->comment.'</p>
 									 </div>
 								 	<div class="tweet-show-popup-footer-menu">
 										<ul>

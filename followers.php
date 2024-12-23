@@ -75,7 +75,7 @@
                                     <h6 class="mt-0" style="color:rgb(91, 112, 131);"><?php echo '@' . $user->username; ?></h6>
                                 </div>
                                 <div class="profile-bio">
-                                    <h5><?php echo $getFromT->getTweetLinks($profileData->bio); ?></h5>
+                                    <h5><?php echo $getFromT->getPostLinks($profileData->bio); ?></h5>
                                 </div>
                                 <div class="profile-link d-flex mt-3">
                                     <?php if(!empty($profileData->website)){ ?>

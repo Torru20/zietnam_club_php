@@ -251,7 +251,7 @@
                     </ul>
                 </div>
                 <div>
-                    <input type="submit" name="next" value="Next"/>
+                    
                     <button type="submit" name="next" value="Next">Next</button>
                 </div>
             </form>
@@ -269,7 +269,7 @@
             Tell us about all the stuff you love and we'll help you get set up.
         </p>
         <span>
-            <a href='../forum_page.php' class='backButton'>Let's go!</a>
+            <a href='../home.php?user_id=<?php echo $user_id;?>' class='backButton'>Let's go!</a>
         </span>
     </div>
 </div>

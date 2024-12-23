@@ -27,7 +27,7 @@ if ( isset( $_POST['tweet'] ) ) {
             $getFromT->addTrend( $status );
         }
         $getFromT->addMention( $status, $user_id, $tweet_id );
-        header( 'Location: home.php' );
+        header( 'Location: forum_page.php' );
     } else {
         $error = 'Type or choose image to tweet';
     }
@@ -48,6 +48,7 @@ if ( isset( $_POST['tweet'] ) ) {
     <?php
         require "components/nav_bar.php";
     ?>
+    <h1 style="padding-top:20px;"></h1>
     <div class="post-body">
         <?php
             require "components/floating-button.php";

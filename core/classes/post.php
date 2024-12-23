@@ -289,7 +289,18 @@ class Post extends User{
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
-
+	public function addTrend($hashtag){
+		preg_match_all("/#+([a-zA-Z0-9_]+)/i", $hashtag, $matches);
+		if($matches){
+			$result = array_values($matches[1]);
+		}
+		$sql = "INSERT INTO `trends` (`hashtag`, `createdOn`) VALUES (:hashtag, CURRENT_TIMESTAMP)";
+		foreach ($result as $trend) {
+			if($stmt = $this->pdo->prepare($sql)){
+				$stmt->execute(array(':hashtag' => $trend));
+			}
+		}
+	}
 	public function addMention($status,$user_id, $tweet_id){
 		if(preg_match_all("/@+([a-zA-Z0-9_]+)/i", $status, $matches)){
 			if($matches){
