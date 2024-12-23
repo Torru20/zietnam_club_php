@@ -83,6 +83,7 @@ if ( $getFromU->loggedIn() === false ) {
 
         <?php 
             $getFromF->whoToFollow( $user_id, $user_id );
+            $getFromT->trends();
             require 'components/footer.php';
             require 'template/footer.php';
         ?>

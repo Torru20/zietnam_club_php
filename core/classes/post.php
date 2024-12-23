@@ -396,13 +396,14 @@ class Post extends User{
 		$stmt = $this->pdo->prepare("SELECT *, COUNT(`tweetID`) AS `tweetsCount` FROM `trends` INNER JOIN `tweets` ON `status` LIKE CONCAT('%#',`hashtag`,'%') OR `retweetMsg` LIKE CONCAT('%#',`hashtag`,'%') GROUP BY `hashtag` ORDER BY `tweetID` LIMIT 2");
 		$stmt->execute();	
 		$trends = $stmt->fetchAll(PDO::FETCH_OBJ);
-		echo '<div class="trends_container"><div class="trends_box"><div class="trends_header"><p>Trends for you</p></div><!-- trend title end-->';
+		echo '<h1 style="padding-top:30px;"></h1>
+		<div class="trends_container"><div class="trends_box"><div class="trends_header"><p>Trends for you</p></div><!-- trend title end-->';
 		foreach ($trends as $trend) {
 			echo '<div class="trends_body">
 					<div class="trend">
                     <span>Trending</span>
 						<p>
-							<a style="color: #000;">#'.$trend->hashtag.'</a>
+							<a style="color: var(--text);">#'.$trend->hashtag.'</a>
 						</p>
 						<div class="trend-tweets">
 							
@@ -414,7 +415,9 @@ class Post extends User{
 		}
 		echo '<div class="trends_show-more">
                     <a href="">Show more</a>
-                </div></div></div>';		
+                </div></div></div>
+				
+				';		
 	} 
 
 	
