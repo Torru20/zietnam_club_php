@@ -9,29 +9,29 @@ class Post extends User{
 	}
  
 	public function posts($user_id, $num){
-	    $stmt = $this->pdo->prepare("SELECT * FROM `posts` LEFT JOIN `users` ON `postBy` = `user_id` WHERE `postBy` = :user_id AND `repostID` = '0' OR `postBy` = `user_id` AND `repostBy` != :user_id AND `postBy` IN (SELECT `receiver` FROM `follow` WHERE `sender` =:user_id) ORDER BY `postID` DESC LIMIT :num");
+	    $stmt = $this->pdo->prepare("SELECT * FROM `tweets` LEFT JOIN `users` ON `tweetBy` = `user_id` WHERE `tweetBy` = :user_id AND `retweetID` = '0' OR `tweetBy` = `user_id` AND `retweetBy` != :user_id AND `tweetBy` IN (SELECT `receiver` FROM `follow` WHERE `sender` =:user_id) ORDER BY `tweetID` DESC LIMIT :num");
 	    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
 	    $stmt->bindParam(":num", $num, PDO::PARAM_INT);
 	    $stmt->execute();
 	    $posts = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 	    foreach ($posts as $post) {
-	      $likes = $this->likes($user_id, $post->postID);
-	      $repost = $this->checkRepost($post->postID, $user_id);
-	      $user = $this->userData($post->repostBy);
+	      $likes = $this->likes($user_id, $post->tweetID);
+	      $retweet = $this->checkRetweet($post->tweetID, $user_id);
+	      $user = $this->userData($post->retweetBy);
  	      echo '<div class="all-tweet">
 			      	<div class="t-show-wrap" style="cursor: pointer;">
 			       	<div class="t-show-inner">
-			       '.((isset($repost['repostID']) ? $repost['repostID'] === $post->repostID OR $post->repostID > 0 : '') ? '
+			       '.((isset($retweet['retweetID']) ? $retweet['retweetID'] === $post->retweetID OR $post->retweetID > 0 : '') ? '
 			      	<div class="t-show-banner">
 			      		<div class="t-show-banner-inner">
-			      			<span><i class="fa fa-retweet" aria-hidden="true"></i></span><span>'.$user->screenName.' Reposted</span>
+			      			<span><i class="fa fa-retweet" aria-hidden="true"></i></span><span>'.$user->screenName.' Retweeted</span>
 			      		</div>
 			      	</div>'
 			        : '').'
 
-			        '.((!empty($post->repostMsg) && $post->postID === $repost['postID'] or $post->repostID > 0) ? '<div class="t-show-head">
-			        <div class="t-show-popup" data-tweet="'.$post->postID.'">
+			        '.((!empty($post->retweetMsg) && $post->tweetID === $retweet['tweetID'] or $post->retweetID > 0) ? '<div class="t-show-head">
+			        <div class="t-show-popup" data-tweet="'.$post->tweetID.'">
 			          <div class="t-show-img">
 			        		<img src="'.BASE_URL.$user->profileImage.'"/>
 			        	</div>
@@ -43,16 +43,16 @@ class Post extends User{
 
 			        		</div>
 			        		<div class="t-h-c-dis">
-			        			'.$this->getPostLinks($post->repostMsg).'
+			        			'.$this->getPostLinks($post->retweetMsg).'
 			        		</div>
 			        	</div>
 			        </div>
 			        <div class="t-s-b-inner">
 			        	<div class="t-s-b-inner-in">
 			        		<div class="retweet-t-s-b-inner">
-			            '.((!empty($post->postImage)) ? '
+			            '.((!empty($post->tweetImage)) ? '
 			        			<div class="retweet-t-s-b-inner-left">
-			        				<img src="'.BASE_URL.$post->postImage.'" class="imagePopup" data-tweet="'.$post->postID.'"/>
+			        				<img src="'.BASE_URL.$post->tweetImage.'" class="imagePopup" data-tweet="'.$post->tweetID.'"/>
 			        			</div>' : '').'
 			        			<div>
 			        				<div class="t-h-c-name">
@@ -69,7 +69,7 @@ class Post extends User{
 			        </div>
 			        </div>' : '
 
-			      	<div class="t-show-popup" data-tweet="'.$post->postID.'">
+			      	<div class="t-show-popup" data-tweet="'.$post->tweetID.'">
 			      		<div class="t-show-head">
 			      			<div class="t-show-img">
 			      				<img src="'.$post->profileImage.'"/>
@@ -85,12 +85,12 @@ class Post extends User{
 			      				</div>
 			      			</div>
 			      		</div>'.
-			          ((!empty($post->postImage)) ?
+			          ((!empty($post->tweetImage)) ?
 			      		 '<!--tweet show head end-->
 			            		<div class="t-show-body">
 			            		  <div class="t-s-b-inner">
 			            		   <div class="t-s-b-inner-in">
-			            		     <img src="'.$post->postImage.'" class="imagePopup" data-tweet="'.$post->postID.'"/>
+			            		     <img src="'.$post->tweetImage.'" class="imagePopup" data-tweet="'.$post->tweetID.'"/>
 			            		   </div>
 			            		  </div>
 			            		</div>
@@ -102,21 +102,21 @@ class Post extends User{
 			      		<div class="t-s-f-right">
 			      			<ul>
 			      				<li><button style="outline:none;"><i class="fa fa-comment" aria-hidden="true"></i></button></li>
-			      				<li>'.((isset($repost['repostID']) ? $post->postID === $repost['repostID'] : '') ? 
-			      					'<button class="retweeted" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true" style="outline:none;"></i><span class="retweetsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>' : 
-			      					'<button class="retweet" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true"></i><span class="retweetsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>').'
+			      				<li>'.((isset($retweet['retweetID']) ? $post->tweetID === $retweet['retweetID'] : '') ? 
+			      					'<button class="retweeted" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true" style="outline:none;"></i><span class="retweetsCount">'.(($post->retweetCount > 0) ? $post->retweetCount : '').'</span></button>' : 
+			      					'<button class="retweet" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true"></i><span class="retweetsCount">'.(($post->retweetCount > 0) ? $post->retweetCount : '').'</span></button>').'
 			      				</li>
 
-			      				<li>'.((isset($likes['likeOn']) ? $likes['likeOn'] === $post->postID : '') ? 
-			      					'<button class="unlike-btn" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>' : 
-			      					'<button class="like-btn" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>').'
+			      				<li>'.((isset($likes['likeOn']) ? $likes['likeOn'] === $post->tweetID : '') ? 
+			      					'<button class="unlike-btn" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>' : 
+			      					'<button class="like-btn" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>').'
 			      				</li>
 			               
-			                '.(($post->postBy === $user_id) ? '
+			                '.(($post->tweetBy === $user_id) ? '
 			              	    <li>
 			      					<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true" style="outline:none;"></i></a>
 			      					<ul>
-			      					  <li><label class="deleteTweet" data-tweet="'.$post->postID.'">Delete Tweet</label></li>
+			      					  <li><label class="deleteTweet" data-tweet="'.$post->tweetID.'">Delete Tweet</label></li>
 			      					</ul>
 			      				</li>' : '').'
 
@@ -129,9 +129,9 @@ class Post extends User{
 	    }
 	}
   
-	public function getUserPosts($user_id){
-		//$stmt = $this->pdo->prepare("SELECT * FROM `posts` LEFT JOIN `users` ON `postBy` = `user_id` WHERE `postBy` = :user_id AND `repostID` = '0' OR `repostBy` = :user_id ORDER BY `postID` DESC");
-		$stmt = $this->pdo->prepare("SELECT * FROM `posts` LEFT JOIN `users` ON `postBy` = `user_id` WHERE `postBy` = :user_id OR `repostBy` = :user_id ORDER BY `postID` DESC");
+	public function getUserTweets($user_id){
+		//$stmt = $this->pdo->prepare("SELECT * FROM `tweets` LEFT JOIN `users` ON `tweetBy` = `user_id` WHERE `tweetBy` = :user_id AND `retweetID` = '0' OR `retweetBy` = :user_id ORDER BY `tweetID` DESC");
+		$stmt = $this->pdo->prepare("SELECT * FROM `tweets` LEFT JOIN `users` ON `tweetBy` = `user_id` WHERE `tweetBy` = :user_id OR `retweetBy` = :user_id ORDER BY `tweetID` DESC");
 
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
 		$stmt->execute();
@@ -139,22 +139,22 @@ class Post extends User{
 		$posts = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 	    foreach ($posts as $post) {
-	      $likes = $this->likes($user_id, $post->postID);
-	      $repost = $this->checkRepost($post->postID, $user_id);
-	      $user = $this->userData($post->repostBy);
+	      $likes = $this->likes($user_id, $post->tweetID);
+	      $retweet = $this->checkRetweet($post->tweetID, $user_id);
+	      $user = $this->userData($post->retweetBy);
  	      echo '<div class="all-tweet">
 			      	<div class="t-show-wrap" style="cursor: pointer;">
 			       	<div class="t-show-inner">
-			       '.((isset($repost['repostID']) ? $repost['repostID'] === $post->repostID OR $post->repostID > 0 : '') ? '
+			       '.((isset($retweet['retweetID']) ? $retweet['retweetID'] === $post->retweetID OR $post->retweetID > 0 : '') ? '
 			      	<div class="t-show-banner">
 			      		<div class="t-show-banner-inner">
-			      			<span><i class="fa fa-retweet" aria-hidden="true"></i></span><span>'.$user->screenName.' Reposted</span>
+			      			<span><i class="fa fa-retweet" aria-hidden="true"></i></span><span>'.$user->screenName.' Retweeted</span>
 			      		</div>
 			      	</div>'
 			        : '').'
 
-			        '.((!empty($post->repostMsg) &&  $post->repostID > 0) ? '<div class="t-show-head">
-			        <div class="t-show-popup" data-tweet="'.$post->postID.'">
+			        '.((!empty($post->retweetMsg) &&  $post->retweetID > 0) ? '<div class="t-show-head">
+			        <div class="t-show-popup" data-tweet="'.$post->tweetID.'">
 			          <div class="t-show-img">
 			        		<img src="'.BASE_URL.$user->profileImage.'"/>
 			        	</div>
@@ -166,16 +166,16 @@ class Post extends User{
 
 			        		</div>
 			        		<div class="t-h-c-dis">
-			        			'.$this->getPostLinks($post->repostMsg).'
+			        			'.$this->getPostLinks($post->retweetMsg).'
 			        		</div>
 			        	</div>
 			        </div>
 			        <div class="t-s-b-inner">
 			        	<div class="t-s-b-inner-in">
 			        		<div class="retweet-t-s-b-inner">
-			            '.((!empty($post->postImage)) ? '
+			            '.((!empty($post->tweetImage)) ? '
 			        			<div class="retweet-t-s-b-inner-left">
-			        				<img src="'.BASE_URL.$post->postImage.'" class="imagePopup" data-tweet="'.$post->postID.'"/>
+			        				<img src="'.BASE_URL.$post->tweetImage.'" class="imagePopup" data-tweet="'.$post->tweetID.'"/>
 			        			</div>' : '').'
 			        			<div>
 			        				<div class="t-h-c-name">
@@ -192,7 +192,7 @@ class Post extends User{
 			        </div>
 			        </div>' : '
 
-			      	<div class="t-show-popup" data-tweet="'.$post->postID.'">
+			      	<div class="t-show-popup" data-tweet="'.$post->tweetID.'">
 			      		<div class="t-show-head">
 			      			<div class="t-show-img">
 			      				<img src="'.$post->profileImage.'"/>
@@ -208,12 +208,12 @@ class Post extends User{
 			      				</div>
 			      			</div>
 			      		</div>'.
-			          ((!empty($post->postImage)) ?
+			          ((!empty($post->tweetImage)) ?
 			      		 '<!--tweet show head end-->
 			            		<div class="t-show-body">
 			            		  <div class="t-s-b-inner">
 			            		   <div class="t-s-b-inner-in">
-			            		     <img src="'.$post->postImage.'" class="imagePopup" data-tweet="'.$post->postID.'"/>
+			            		     <img src="'.$post->tweetImage.'" class="imagePopup" data-tweet="'.$post->tweetID.'"/>
 			            		   </div>
 			            		  </div>
 			            		</div>
@@ -225,21 +225,21 @@ class Post extends User{
 			      		<div class="t-s-f-right">
 			      			<ul>
 			      				<li><button style="outline:none;"><i class="fa fa-comment" aria-hidden="true"></i></button></li>
-			      				<li>'.((isset($repost['repostID']) ? $post->postID === $repost['repostID'] : '') ? 
-			      					'<button class="retweeted" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true" style="outline:none;"></i><span class="retweetsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>' : 
-			      					'<button class="retweet" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true"></i><span class="retweetsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>').'
+			      				<li>'.((isset($retweet['retweetID']) ? $post->tweetID === $retweet['retweetID'] : '') ? 
+			      					'<button class="retweeted" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true" style="outline:none;"></i><span class="retweetsCount">'.(($post->retweetCount > 0) ? $post->retweetCount : '').'</span></button>' : 
+			      					'<button class="retweet" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true"></i><span class="retweetsCount">'.(($post->retweetCount > 0) ? $post->retweetCount : '').'</span></button>').'
 			      				</li>
 
-			      				<li>'.((isset($likes['likeOn']) ? $likes['likeOn'] === $post->postID : '') ? 
-			      					'<button class="unlike-btn" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>' : 
-			      					'<button class="like-btn" data-tweet="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>').'
+			      				<li>'.((isset($likes['likeOn']) ? $likes['likeOn'] === $post->tweetID : '') ? 
+			      					'<button class="unlike-btn" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>' : 
+			      					'<button class="like-btn" data-tweet="'.$post->tweetID.'" data-user="'.$post->tweetBy.'" style="outline:none;"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>').'
 			      				</li>
 			               
-			                '.(($post->postBy === $user_id) ? '
+			                '.(($post->tweetBy === $user_id) ? '
 			              	    <li>
 			      					<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true" style="outline:none;"></i></a>
 			      					<ul>
-			      					  <li><label class="deleteTweet" data-tweet="'.$post->postID.'">Delete Tweet</label></li>
+			      					  <li><label class="deleteTweet" data-tweet="'.$post->tweetID.'">Delete Tweet</label></li>
 			      					</ul>
 			      				</li>' : '').'
 
@@ -252,33 +252,33 @@ class Post extends User{
 	    }
 	}
 
-	public function addLike($user_id, $post_id, $get_id){
-		$stmt = $this->pdo->prepare("UPDATE `posts` SET `likesCount` = `likesCount`+1 WHERE `postID` = :post_id");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function addLike($user_id, $tweet_id, $get_id){
+		$stmt = $this->pdo->prepare("UPDATE `tweets` SET `likesCount` = `likesCount`+1 WHERE `tweetID` = :tweet_id");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 
-		$this->create('likes', array('likeBy' => $user_id, 'likeOn' => $post_id));
+		$this->create('likes', array('likeBy' => $user_id, 'likeOn' => $tweet_id));
 	
 		if($get_id != $user_id){
-			$this->message->sendNotification($get_id, $user_id, $post_id, 'like');
+			$this->message->sendNotification($get_id, $user_id, $tweet_id, 'like');
 		}
 	}
 
-	public function unLike($user_id, $post_id, $get_id){
-		$stmt = $this->pdo->prepare("UPDATE `posts` SET `likesCount` = `likesCount`-1 WHERE `postID` = :post_id");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function unLike($user_id, $tweet_id, $get_id){
+		$stmt = $this->pdo->prepare("UPDATE `tweets` SET `likesCount` = `likesCount`-1 WHERE `tweetID` = :tweet_id");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 
-		$stmt = $this->pdo->prepare("DELETE FROM `likes` WHERE `likeBy` = :user_id and `likeOn` = :post_id");
+		$stmt = $this->pdo->prepare("DELETE FROM `likes` WHERE `likeBy` = :user_id and `likeOn` = :tweet_id");
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute(); 
 	}
 
-	public function likes($user_id, $post_id){
-		$stmt = $this->pdo->prepare("SELECT * FROM `likes` WHERE `likeBy` = :user_id AND `likeOn` = :post_id");
+	public function likes($user_id, $tweet_id){
+		$stmt = $this->pdo->prepare("SELECT * FROM `likes` WHERE `likeBy` = :user_id AND `likeOn` = :tweet_id");
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
@@ -290,7 +290,7 @@ class Post extends User{
 		return $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 
-	public function addMention($status,$user_id, $post_id){
+	public function addMention($status,$user_id, $tweet_id){
 		if(preg_match_all("/@+([a-zA-Z0-9_]+)/i", $status, $matches)){
 			if($matches){
 				$result = array_values($matches[1]);
@@ -304,7 +304,7 @@ class Post extends User{
 			}
 
 			if($data->user_id != $user_id){
-				$this->message->sendNotification($data->user_id, $user_id, $post_id, 'mention');
+				$this->message->sendNotification($data->user_id, $user_id, $tweet_id, 'mention');
 			}
 		}
 	}
@@ -320,57 +320,57 @@ class Post extends User{
 		return $post;		
 	}
 
-	public function getPopupPost($post_id){
-		$stmt = $this->pdo->prepare("SELECT * FROM `posts`,`users` WHERE `postID` = :post_id AND `postBy` = `user_id`");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function getPopupTweet($tweet_id){
+		$stmt = $this->pdo->prepare("SELECT * FROM `tweets`,`users` WHERE `tweetID` = :tweet_id AND `tweetBy` = `user_id`");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_OBJ);
 	}
 
-	public function repost($post_id, $user_id, $get_id, $comment){
-		$stmt = $this->pdo->prepare("UPDATE `posts` SET `repostCount` = `repostCount`+1 WHERE `postID` = :post_id AND `postBy` = :get_id");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function retweet($tweet_id, $user_id, $get_id, $comment){
+		$stmt = $this->pdo->prepare("UPDATE `tweets` SET `retweetCount` = `retweetCount`+1 WHERE `tweetID` = :tweet_id AND `tweetBy` = :get_id");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->bindParam(":get_id", $get_id, PDO::PARAM_INT);
 		$stmt->execute();
 
-		$stmt = $this->pdo->prepare("INSERT INTO `posts` (`status`,`postBy`,`repostID`,`repostBy`,`postImage`,`postedOn`,`likesCount`,`repostCount`,`repostMsg`) SELECT `status`,`postBy`,`postID`,:user_id,`postImage`,`postedOn`,`likesCount`,`repostCount`,:repostMsg FROM `posts` WHERE `postID` = :post_id");
+		$stmt = $this->pdo->prepare("INSERT INTO `tweets` (`status`,`tweetBy`,`retweetID`,`retweetBy`,`tweetImage`,`postedOn`,`likesCount`,`retweetCount`,`retweetMsg`) SELECT `status`,`tweetBy`,`tweetID`,:user_id,`tweetImage`,`postedOn`,`likesCount`,`retweetCount`,:retweetMsg FROM `tweets` WHERE `tweetID` = :tweet_id");
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
-		$stmt->bindParam(":repostMsg", $comment, PDO::PARAM_STR);
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+		$stmt->bindParam(":retweetMsg", $comment, PDO::PARAM_STR);
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 
-		$this->message->sendNotification($get_id, $user_id, $post_id, 'repost');
+		$this->message->sendNotification($get_id, $user_id, $tweet_id, 'retweet');
 
  	}
 
-	public function checkRepost($post_id, $user_id){
-		$stmt = $this->pdo->prepare("SELECT * FROM `posts` WHERE `repostID` = :post_id AND `repostBy` = :user_id or `postID` = :post_id and `repostBy` = :user_id");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function checkRetweet($tweet_id, $user_id){
+		$stmt = $this->pdo->prepare("SELECT * FROM `tweets` WHERE `retweetID` = :tweet_id AND `retweetBy` = :user_id or `tweetID` = :tweet_id and `retweetBy` = :user_id");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
-	public function tweetPopup($post_id){
-		$stmt = $this->pdo->prepare("SELECT * FROM `posts`,`users` WHERE `postID` = :post_id and `user_id` = `postBy`");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function tweetPopup($tweet_id){
+		$stmt = $this->pdo->prepare("SELECT * FROM `tweets`,`users` WHERE `tweetID` = :tweet_id and `user_id` = `tweetBy`");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_OBJ);
 	}
 
-	public function comments($post_id){
-		$stmt = $this->pdo->prepare("SELECT * FROM `comments` LEFT JOIN `users` ON `commentBy` = `user_id` WHERE `commentOn` = :post_id");
-		$stmt->bindParam(":post_id", $post_id, PDO::PARAM_INT);
+	public function comments($tweet_id){
+		$stmt = $this->pdo->prepare("SELECT * FROM `comments` LEFT JOIN `users` ON `commentBy` = `user_id` WHERE `commentOn` = :tweet_id");
+		$stmt->bindParam(":tweet_id", $tweet_id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 
 	public function countTweets($user_id){
-		$stmt = $this->pdo->prepare("SELECT COUNT(`postID`) AS `totalPosts` FROM `posts` WHERE `postBy` = :user_id AND `repostID` = '0' OR `repostBy` = :user_id");
+		$stmt = $this->pdo->prepare("SELECT COUNT(`tweetID`) AS `totalTweets` FROM `tweets` WHERE `tweetBy` = :user_id AND `retweetID` = '0' OR `retweetBy` = :user_id");
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
 		$stmt->execute();
 		$count = $stmt->fetch(PDO::FETCH_OBJ);
-		echo $count->totalPosts;
+		echo $count->totalTweets;
 	}
 
 	public function countLikes($user_id){
@@ -382,7 +382,7 @@ class Post extends User{
 	} 
 
 	public function trends(){
-		$stmt = $this->pdo->prepare("SELECT *, COUNT(`postID`) AS `postsCount` FROM `trends` INNER JOIN `posts` ON `status` LIKE CONCAT('%#',`hashtag`,'%') OR `repostMsg` LIKE CONCAT('%#',`hashtag`,'%') GROUP BY `hashtag` ORDER BY `postID` LIMIT 2");
+		$stmt = $this->pdo->prepare("SELECT *, COUNT(`tweetID`) AS `tweetsCount` FROM `trends` INNER JOIN `tweets` ON `status` LIKE CONCAT('%#',`hashtag`,'%') OR `retweetMsg` LIKE CONCAT('%#',`hashtag`,'%') GROUP BY `hashtag` ORDER BY `tweetID` LIMIT 2");
 		$stmt->execute();	
 		$trends = $stmt->fetchAll(PDO::FETCH_OBJ);
 		echo '<div class="trends_container"><div class="trends_box"><div class="trends_header"><p>Trends for you</p></div><!-- trend title end-->';

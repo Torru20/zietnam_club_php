@@ -17,7 +17,7 @@
 <div class="wrap5">
 	<div class="retweet-popup-body-wrap">
 		<div class="retweet-popup-heading">
-			<h3>Retweet this to followers?</h3>
+			<h3>Repost this to followers?</h3>
 			<span><button class="close-retweet-popup"><i class="fa fa-times" aria-hidden="true" style="outline:none;"></i></button></span>
 		</div>
 		<div class="retweet-popup-input">
@@ -44,7 +44,7 @@
 		</div>
 		<div class="retweet-popup-footer"> 
 			<div class="retweet-popup-footer-right">
-				<button class="retweet-it new-btn" data-tweet="<?php echo $tweet->tweetID;?>" data-user="<?php echo $tweet->user_id;?>" type="submit"><i class="fa fa-retweet mr-2" aria-hidden="true"></i>Retweet</button>
+				<button class="retweet-it new-btn" data-tweet="<?php echo $tweet->tweetID;?>" data-user="<?php echo $tweet->user_id;?>" type="submit"><i class="fa fa-retweet mr-2" aria-hidden="true"></i>Repost</button>
 			</div>
 		</div>
 	</div>

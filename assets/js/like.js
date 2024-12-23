@@ -1,12 +1,12 @@
 	$(function(){
 	$(document).on('click','.like-btn', function(){
- 		var tweet_id  = $(this).data('tweet');
+ 		var post_id  = $(this).data('tweet');
 		var user_id   = $(this).data('user');
 		var counter   = $(this).find('.likesCounter');
 		var count     = counter.text();
 		var button    = $(this);
 
-		$.post('http://localhost/zietnam_club_php/core/ajax/like.php', {like:tweet_id, user_id:user_id}, function(){
+		$.post('http://localhost/zietnam_club_php/core/ajax/like.php', {like:post_id, user_id:user_id}, function(){
  			counter.show();
  			button.addClass('unlike-btn');
 			button.removeClass('like-btn');
@@ -18,13 +18,13 @@
 	});
 
 	$(document).on('click','.unlike-btn', function(){
- 		var tweet_id  = $(this).data('tweet');
+ 		var post_id  = $(this).data('tweet');
 		var user_id   = $(this).data('user');
 		var counter   = $(this).find('.likesCounter');
 		var count     = counter.text();
 		var button    = $(this);
 
-		$.post('http://localhost/zietnam_club_php/core/ajax/like.php', {unlike:tweet_id, user_id:user_id}, function(){
+		$.post('http://localhost/zietnam_club_php/core/ajax/like.php', {unlike:post_id, user_id:user_id}, function(){
  			counter.show();
  			button.addClass('like-btn');
 			button.removeClass('unlike-btn');
