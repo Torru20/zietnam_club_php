@@ -97,10 +97,10 @@ $user_id = $_SESSION['user_id'];
                             <div class="profile-follow mt-2 d-flex">
                                 <h6 class="mr-3 ml-1" style="font-weight: 700;"><?php echo $profileData->following; ?>
                                     <a href="<?php echo BASE_URL; ?>following.php">
-                                        <a href="<?php echo BASE_URL; ?>following.php" style="color:var(--text);">Following</a>
+                                        <a href="<?php echo BASE_URL; ?>following.php?username=<?php echo $username?>" style="color:var(--text);">Following</a>
                                     </a></h6>
                                 <h6 class="mr-3"style="font-weight: 700;"><?php echo $profileData->followers; ?>
-                                <a href="<?php echo BASE_URL.$profileData->username; ?>/followers"style="color:var(--text);">
+                                <a href="<?php echo BASE_URL; ?>followers.php?username=<?php echo $username?>"style="color:var(--text);">
                                     Followers
                                 </a></h6>
                                 <h6 style="font-weight: 700;">

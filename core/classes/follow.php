@@ -96,7 +96,7 @@
 						</div>
 						<div class="follow-person-bio ml-5 mb-3">
 							<div class="follow-person-dis ml-4">
-								'.Tweet::getTweetLinks($following->bio).'
+								
 							</div>
 						</div>
 					</div>
@@ -130,7 +130,7 @@
 						</div>
 						<div class="follow-person-bio ml-5 mb-3">
 							<div class="follow-person-dis ml-4">
-								'.Tweet::getTweetLinks($following->bio).'
+								
 							</div>
 						</div>
 					</div>
