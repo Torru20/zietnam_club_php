@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <div class="notification-tweet">
-                                    <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> liked your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
+                                    <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> liked your <?php if($data->tweetBy === $user_id){echo 'Post';}else{echo 'Repost';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
                                 </div>
                                 <div class="notification-footer">
                                     <div class="noti-footer-inner">
@@ -158,7 +158,7 @@
                                         </span>
                                     </div>
                                     <div class="notification-tweet">
-                                        <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> retweet your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
+                                        <a href="<?php echo BASE_URL?>profile_page.php?username=<?php echo $data->username;?>" class="notifi-name"><?php echo $data->screenName;?></a><span> repost your <?php if($data->tweetBy === $user_id){echo 'Tweet';}else{echo 'Retweet';}?> - <span><?php echo $getFromU->timeAgo($data->time);?></span>
                                     </div>
                                     <div class="notification-footer">
                                         <div class="noti-footer-inner">
