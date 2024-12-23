@@ -160,7 +160,7 @@ class Post extends User{
 			        	</div>
 			        	<div class="t-s-head-content">
 			        		<div class="t-h-c-name">
-			        			<span><a href="'.BASE_URL.'profile_page.php?username='.$post->username.'"</a></span>
+			        			<span><a href="#"</a></span>
 			        			<span>@'.$user->username.'</span>
 			        			<span>'.$this->timeAgo($post->postedOn).'</span>
 
@@ -179,7 +179,7 @@ class Post extends User{
 			        			</div>' : '').'
 			        			<div>
 			        				<div class="t-h-c-name">
-			        					<span><a href="'.BASE_URL.$post->username.'">'.$post->screenName.'</a></span>
+			        					<span><a href="'.BASE_URL.'profile_page.php?username='.$post->username.'">'.$post->screenName.'</a></span>
 			        					<span>@'.$post->username.'</span>
 			        					<span>'.$this->timeAgo($post->postedOn).'</span>
 			        				</div>
