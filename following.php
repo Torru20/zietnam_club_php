@@ -93,7 +93,7 @@ $user_id = $_SESSION['user_id'];
                                         </a></h6>
                                     <h6 style="font-weight: 700;">
                                         <?php echo $getFromT->countTweets($profileId); ?>
-                                        <a style="color:rgb(91, 112, 131);">Posts</a></h6>
+                                        <a href="<?php echo BASE_URL; ?>profile_page.php?username=<?php echo $username?>" style="color:var(--text);">Posts</a></h6>
                                 </div>
                             </div>
                         </div>

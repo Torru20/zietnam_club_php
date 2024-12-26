@@ -30,7 +30,7 @@ class Post extends User{
 			      	</div>'
 			        : '').'
 
-			        '.((!empty($post->retweetMsg) && $post->tweetID === $retweet['tweetID'] or $post->retweetID > 0) ? '<div class="t-show-head">
+			        '.(($post->retweetID > 0) ? '<div class="t-show-head">
 			        <div class="t-show-popup" data-tweet="'.$post->tweetID.'">
 			          <div class="t-show-img">
 			        		<img src="'.BASE_URL.$user->profileImage.'"/>

@@ -85,10 +85,10 @@
 							 	<img src="'.BASE_URL.$following->profileImage.'"/>
 							</div>
                             <div class="follow-person-name mt-2">
-								<a href="'.BASE_URL.$following->username.'">'.$following->screenName.'</a>
+								<a href="'.BASE_URL.'profile_page.php?username='.$following->username.'">'.$following->screenName.'</a>
 							</div>
 							<div class="follow-person-tname">
-								<a href="'.BASE_URL.$following->username.'">@'.$following->username.'</a>
+								<a href="'.BASE_URL.'profile_page.php?username='.$following->username.'">@'.$following->username.'</a>
 							</div>
 							<div class="follow-person-button">
 								 '.$this->followBtn($following->user_id, $user_id, $followID).'
@@ -119,10 +119,11 @@
 							 	<img src="'.BASE_URL.$following->profileImage.'"/>
 							</div>
                             <div class="follow-person-name mt-2">
-								<a href="'.BASE_URL.$following->username.'">'.$following->screenName.'</a>
+								<a href="'.BASE_URL.'profile_page.php?username='.$following->username.'">'.$following->screenName.'</a>
 							</div>
 							<div class="follow-person-tname">
-								<a href="'.BASE_URL.$following->username.'">@'.$following->username.'</a>
+							
+								<a href="'.BASE_URL.'profile_page.php?username='.$following->username.'">@'.$following->username.'</a>
 							</div>
 							<div class="follow-person-button">
 								 '.$this->followBtn($following->user_id, $user_id, $followID).'

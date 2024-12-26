@@ -263,7 +263,7 @@
 <div class='lets-wrapper'>
     <div class='step-letsgo'>
         <h1>We're glad you're here, <?php echo $user->screenName; ?> </h1>
-        <p style="font-size:22px;">Twitter is a constantly updating stream of the coolest, most important news, media, sports, TV, conversations and more--all tailored just for you.</p>
+        <p style="font-size:22px;">Zietnam Club is a constantly updating stream of the coolest, most important news, media, sports, TV, conversations and more--all tailored just for you.</p>
         <br>
         <p style="font-size:22px;">
             Tell us about all the stuff you love and we'll help you get set up.
