@@ -11,11 +11,12 @@ if ( $getFromA->loggedIn() === false ) {
 <head>
     <title>User management</title>
     
-    <link rel="stylesheet" href="../css/table-style.css">
+    
     <link rel='stylesheet' href='<?php echo BASE_URL; ?>../assets/css/style-complete.css' />
     <?php
       require "../template/a_head.php";
     ?>
+    <link rel="stylesheet" href="../css/table-style.css">
 </head>
 <body>
     <?php

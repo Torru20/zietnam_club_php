@@ -33,11 +33,10 @@ if ( isset( $_POST['post-rent'] ) ) {
 
     <title>My forum</title>
     
-    <link rel="stylesheet" href="../css/table-style.css">
-    
     <?php
       require "../template/a_head.php";
     ?>
+    <link rel="stylesheet" href="../css/table-style.css">
 </head>
 <body>
     <?php
