@@ -51,8 +51,7 @@
         <div class="main">
             <div class=''>
                 <div class=''>
-                    <!--TWEET WRAPPER-->
-                    <p class="page_title mb-0"><i class="fa fa-arrow-left mr-4" style="color:#50b7f5;"></i><?php echo $user->username; ?></p>
+                    
                     <div class='profile-box'>
                         <div class='profile-cover mt-0'>
                             <!-- PROFILE-IMAGE -->
