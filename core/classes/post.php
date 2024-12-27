@@ -116,7 +116,7 @@ class Post extends User{
 			              	    <li>
 			      					<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true" style="outline:none;"></i></a>
 			      					<ul>
-			      					  <li><label class="deleteTweet" data-tweet="'.$post->tweetID.'">Delete Tweet</label></li>
+			      					  <li><label class="deleteTweet" data-tweet="'.$post->tweetID.'">Delete Post</label></li>
 			      					</ul>
 			      				</li>' : '').'
 
@@ -239,7 +239,7 @@ class Post extends User{
 			              	    <li>
 			      					<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true" style="outline:none;"></i></a>
 			      					<ul>
-			      					  <li><label class="deleteTweet" data-tweet="'.$post->tweetID.'">Delete Tweet</label></li>
+			      					  <li><label class="deleteTweet" data-tweet="'.$post->tweetID.'">Delete Post</label></li>
 			      					</ul>
 			      				</li>' : '').'
 
