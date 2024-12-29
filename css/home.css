@@ -170,7 +170,7 @@ html {
     color: var(--primary-color);
   
     /* Background image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(hero.jpg) ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/hero.jpg)  ;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -218,7 +218,7 @@ html {
     color: var(--text);
   
     /* Background image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(hero.jpg) ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/hero.jpg) ;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
